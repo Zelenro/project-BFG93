@@ -1,19 +1,24 @@
-/* Styles for Mobile devices */
+/* ===== CONTAINER ===== */
 .container {
-  min-width: 320px;
-  max-width: 375px;
-  margin: 0 auto;
-  padding: 0 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-/* Styles for Tablet devices */
-@media only screen and (min-width: 768px) {
+
+/* Tablet — от 768px */
+@media (min-width: 768px) {
   .container {
-    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
-/* Styles for Desktop devices */
-@media only screen and (min-width: 1200px) {
+
+/* Desktop — от 1440px */
+@media (min-width: 1440px) {
   .container {
-    max-width: 1200px;
+    max-width: 1440px;
+    padding-left: 128px;
+    padding-right: 128px;
   }
 }
