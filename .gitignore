@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.rar
+*.zip
+delete/
+src/partials/{=$icon-path}
