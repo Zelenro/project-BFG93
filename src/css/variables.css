@@ -1,0 +1,62 @@
+:root {
+    /* ===== COLORS ===== */
+    --color-black: #111111;
+    --color-dark: #202024;
+    --color-primary: #4F2EE8;
+    --color-accent: #EAC645;
+    --color-white: #FFFFFF;
+
+    /* ===== LIGHT THEME (default) ===== */
+    --color-bg: var(--color-white);
+    --color-text: var(--color-black);
+
+    /* ===== FONT FAMILY ===== */
+    --font-main: 'DM Sans', sans-serif;
+
+    /* ===== FONT SIZES ===== */
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+
+    /* ===== LINE HEIGHTS ===== */
+    --line-height-xs: 14px;
+    --line-height-sm: 18px;
+    --line-height-md: 24px;
+
+    /* ===== FONT WEIGHTS ===== */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /* ===== LETTER SPACING ===== */
+    --letter-spacing-sm: -0.01em;
+    --letter-spacing-md: -0.02em;
+    --letter-spacing-lg: -0.04em;
+
+    /* ===== BUTTONS ===== */
+    --btn-bg-default: transparent;
+    --btn-bg-hover: var(--color-primary);
+    --btn-border: 2px solid var(--color-primary);
+    --btn-text-default: var(--color-black);
+    --btn-text-hover: var(--color-white);
+    --btn-radius: 28px;
+    --btn-padding: 14px 28px;
+    --btn-font-size: var(--font-size-sm);
+    --btn-font-weight: var(--font-weight-bold);
+    --btn-letter-spacing: var(--letter-spacing-lg);
+
+    /* ===== TRANSITIONS ===== */
+    --transition: 300ms ease-in-out;
+
+    /* ===== BREAKPOINTS (для справки в комментариях) ===== */
+    /* Mobile:  375px  */
+    /* Tablet:  768px  */
+    /* Desktop: 1440px */
+}
+
+/* ===== DARK THEME ===== */
+body.dark {
+    --color-bg: var(--color-dark);
+    --color-text: var(--color-white);
+}
