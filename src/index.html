@@ -9,18 +9,21 @@
       width="28"
       height="28"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="./img/sprite.svg" />
+    <load src="./partials/header/header.html" icon-path="./img/sprite.svg" />
 
     <main>
       <!-- Loads the specified .html file -->
-      <div class="container">
-        <h1>HOME PAGE INDEX</h1>
-      </div>
+      
+        <load src="./partials/main/home.html" />
+     </div>
 
       <!-- <rrload src="./partials/vite-promo.html" /> -->
       <!-- <rrload src="./partials/badges.html" /> -->
@@ -29,5 +32,7 @@
     <!-- <NOT-load src="./partials/footer.html" /> -->
 
     <script type="module" src="./main.js"></script>
+    <button class="back-to-top" id="backToTopBtn" type="button" aria-label="Вернуться наверх"></button>
+
   </body>
 </html>

@@ -3,7 +3,7 @@ const BASE_URL = 'https://books-backend.p.goit.global/';
 const endpoint = {
   category: 'books/category-list',
   topBooks: 'books/top-books',
-  certainCategor: 'books/category',
+  certainCategory: 'books/category',
   byId: id => `books/${id}`,
 };
 
@@ -15,30 +15,40 @@ const options = {
 };
 
 export const booksApiService = {
-  async getCategori() {
+  async getCategories() {
     const response = await fetch(`${BASE_URL}${endpoint.category}`, options);
     if (!response.ok) {
       throw new Error('Failed to fetch Category');
     }
     return response.json();
   },
+
   async topBooks() {
     const response = await fetch(`${BASE_URL}${endpoint.topBooks}`, options);
     if (!response.ok) {
       throw new Error('Failed to fetch Top books');
     }
+    // console.log('first');
     return response.json();
   },
+
   async certainCategory(category) {
-    const queryParams = `category=${category}`;
+    if (category === 'All Categories') {
+      // console.log('topBooks');
+      return this.topBooks();
+    }
+    const encodeCategoryQuery = encodeURIComponent(category);
+    const queryParams = `category=${encodeCategoryQuery}`;
     const response = await fetch(
       `${BASE_URL}${endpoint.certainCategory}?${queryParams}`
     );
     if (!response.ok) {
       throw new Error('Failed to fetch Certain category');
     }
+
     return response.json();
   },
+
   async byId(id) {
     const response = await fetch(`${BASE_URL}${endpoint.byId(id)}`);
     if (!response.ok) {

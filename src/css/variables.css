@@ -4,7 +4,7 @@
     --color-dark: #202024;
     --color-primary: #4F2EE8;
     --color-accent: #EAC645;
-    --color-white: #FFFFFF;
+    --color-white: #ffffff;
 
     /* ===== LIGHT THEME (default) ===== */
     --color-bg: var(--color-white);

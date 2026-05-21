@@ -1,6 +1,9 @@
 /* ===== HEADER ===== */
 .header {
   background-color: var(--color-bg);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 1.5px solid rgba(17, 17, 17, 1);
 }
 
 /* ===== NAV ===== */
