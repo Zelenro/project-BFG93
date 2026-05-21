@@ -1,0 +1,510 @@
+/* ==========================================================================
+   BASE & MOBILE ( 320px)
+   ========================================================================== */
+.home {
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.home__sidebar {
+    margin-bottom: 40px;
+
+}
+
+.categories {
+    display: block;
+    width: 100%;
+    max-width: 335px;
+    height: 228px;
+    margin-bottom: 40px;
+
+    overflow-y: auto;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 2%, black 98%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 2%, black 98%, transparent 100%);
+    scrollbar-width: thin;
+    scrollbar-color: #e0e0e0 transparent;
+}
+
+.categories::-webkit-scrollbar {
+    width: 6px;
+}
+
+.categories::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.categories::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+.categories__list {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.categories__item {
+    margin-bottom: 24px;
+}
+
+.categories__link {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    color: rgba(17, 17, 17, 0.6);
+    transition: color 0.2s ease;
+}
+
+.categories__item:last-child .categories__link {
+    margin-bottom: 0;
+}
+
+.categories__link:hover,
+.categories__link:focus {
+    color: #4f2ee8;
+}
+
+.categories__link.is-active {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #4f2ee8;
+}
+
+.charitable__foundations {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 335px;
+    height: 460px;
+    padding-top: 24px;
+    padding-left: 40px;
+
+    box-sizing: border-box;
+    border-radius: 16px;
+    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
+    box-shadow: 0 10px 10px 0 rgba(245, 245, 247, 0.1);
+}
+
+.title__charitable__foundations {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: #FFF;
+}
+
+.title__charitable__foundations__logo {
+    width: 20px;
+    margin-left: 12px;
+    filter: brightness(0) invert(1);
+}
+
+.foundations__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 292px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.foundations__list::-webkit-scrollbar {
+    display: none;
+}
+
+.foundations__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.foundations__item:last-child {
+    margin-bottom: 0;
+}
+
+.foundations__number {
+    margin-right: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: #FFF;
+    width: 24px;
+    flex-shrink: 0;
+}
+
+.foundations__logo {
+    height: 32px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    object-fit: contain;
+}
+
+.support__slider-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.support__slider-btn:hover,
+.support__slider-btn:focus {
+    background-color: #f0f0f0;
+    transform: translateX(-50%) scale(1.05);
+}
+
+.support__slider-btn::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #4f2ee8;
+    border-bottom: 2px solid #4f2ee8;
+    transform: translateY(-2px) rotate(45deg);
+}
+
+.popular__books {
+    display: flex;
+    flex-direction: column;
+}
+
+.books__list__title {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -0.04em;
+    color: #111;
+}
+
+.title-accent {
+    color: #4F2EE8;
+}
+
+.books__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-books__category {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.top-books__title {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #B4AFAF;
+}
+
+.top-books__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.top-books__list .books__item {
+    margin-bottom: 0px;
+}
+
+.books__list>.books__item {
+    margin-bottom: 40px;
+
+}
+
+.books__item {
+    width: 100%;
+}
+
+.book-card {
+    display: block;
+    width: 100%;
+    max-width: 335px;
+    margin: 0 auto;
+}
+
+.card__cover {
+    width: 100%;
+    max-width: 335px;
+    height: 485px;
+
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background-color: #f0f0f0;
+}
+
+.book-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card__info {
+    margin-top: 14px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.card__title {
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #111;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.card__author {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.04em;
+    color: #B4AFAF;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    margin-left: auto;
+    width: 124px;
+    height: 46px;
+    border: 2px solid #4F2EE8;
+    border-radius: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.book__btn:hover {
+    background-color: #4F2EE8;
+}
+
+.book__btn:hover .button-text {
+    color: #fff;
+}
+
+.button-text {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #111;
+    transition: color 0.2s ease;
+}
+
+
+/* ==========================================================================
+   2. TABLET ( 768px)
+   ========================================================================== */
+@media (min-width: 768px) {
+    .home {
+        margin: 0;
+        margin-top: 40px;
+        padding: 0;
+    }
+
+    .home__sidebar {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+
+    .categories {
+        width: 100%;
+        max-width: 337px;
+        height: 472px;
+    }
+
+
+    .charitable__foundations {
+        width: 335px;
+        height: 474px;
+        margin: 0 0 0 auto;
+    }
+
+
+    .popular__books {
+        margin-top: 0;
+    }
+
+
+    .top-books__list {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .books__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .books__item {
+        display: block;
+        width: 216px;
+        margin-left: auto;
+    }
+
+    .books__item:nth-of-type(3n + 1) {
+        margin-left: 0;
+    }
+
+
+    .book-card {
+        max-width: 218px;
+        margin: 0;
+    }
+
+    .card__cover {
+        width: 100%;
+        height: 316px;
+    }
+}
+
+/* ==========================================================================
+   3. DESCKTOP (1440px)
+   ========================================================================== */
+@media (min-width: 1439px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        max-width: 1440px;
+    }
+
+    .home__sidebar {
+        display: flex;
+        flex-direction: column;
+        width: 356px;
+        flex-shrink: 0;
+
+    }
+
+    .categories {
+        height: 472px;
+        margin-bottom: 40px;
+    }
+
+    .charitable__foundations {
+        height: 474px;
+        margin: 0;
+    }
+
+    .popular__books {
+        flex-grow: 1;
+        width: 996px
+    }
+
+    .popular__books>.books__list {
+        display: grid;
+        grid-template-columns: repeat(5, 180px);
+        gap: 40px 24px;
+    }
+
+    .popular__books>.books__list:has(.top-books__category) {
+        display: block;
+        width: 100%;
+    }
+
+    .top-books__category {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .top-books__list {
+        display: grid;
+        grid-template-columns: repeat(5, 180px);
+        gap: 40px 24px;
+        width: 100%;
+    }
+
+    .books__item,
+    .book-card {
+        display: block;
+        width: 100%;
+        max-width: none;
+    }
+
+}

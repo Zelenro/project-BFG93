@@ -1,24 +1,30 @@
 /* ===== CONTAINER ===== */
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 
 /* Tablet — от 768px */
 @media (min-width: 768px) {
   .container {
+    max-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
 /* Desktop — от 1440px */
-@media (min-width: 1440px) {
+@media (min-width: 1439px) {
   .container {
-    max-width: 1440px;
-    padding-left: 128px;
-    padding-right: 128px;
+    max-width: 1441px;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }

@@ -1,0 +1,53 @@
+.back-to-top {
+    /* Позиционирование */
+    position: fixed;
+    bottom: 120px;
+    /* Настройте высоту под вашу кнопку SEE MORE */
+    right: 40px;
+    /* Отступ от правого края экрана */
+    z-index: 99;
+    /* Кнопка должна быть поверх всего контента */
+
+    /* Размеры и форма */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    /* Цвета и тени */
+    background-color: #4f2ee8;
+    box-shadow: 0 0 0 8px rgba(79, 46, 232, 0.2);
+    /* Полупрозрачный круг вокруг кнопки */
+
+    /* Изначально скрываем кнопку */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.2s ease;
+}
+
+/* Состояние, когда кнопка становится видимой */
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #3c22b8;
+    /* Чуть темнее при наведении */
+}
+
+/* Отрисовка белой стрелочки "вверх" внутри кнопки */
+.back-to-top::after {
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-135deg);
+
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-right: 3px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
+}
