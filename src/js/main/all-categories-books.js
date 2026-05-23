@@ -7,7 +7,6 @@ export async function markupListCategoryBooks() {
         </li>`;
 
   if (!listTopBooks) {
-    console.log('List not found!');
     return;
   }
   try {

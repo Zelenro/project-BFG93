@@ -17,11 +17,9 @@ export async function markupPopBooks(category) {
   if (!booksList) {
     return;
   }
-
   if (!category || category === 'All Categories') {
     category = 'All Categories';
     booksListTitle.innerHTML = renderTitleWithLastWord('Best Sellers Books');
-
     try {
       booksList.innerHTML = '';
       const topBooks = await booksApiService.topBooks();
@@ -31,11 +29,9 @@ export async function markupPopBooks(category) {
         })
         .map(({ list_name, books }) => {
           const limitedBooks = books.slice(0, booksCount());
-
           const markup = limitedBooks
-            .map(({ book_image, title, author }) => {
-              const card = bookCardTemplate(book_image, title, author);
-              return card;
+            .map(({ book_image, title, author, _id }) => {
+              return bookCardTemplate(book_image, title, author, _id);
             })
             .join('');
           return categoryBlockTemplate(list_name, markup);
@@ -43,7 +39,6 @@ export async function markupPopBooks(category) {
         .join('');
       booksList.insertAdjacentHTML('beforeend', markup);
     } catch (error) {
-      console.log('Error markPopBooks Top Books', error);
     } finally {
     }
     return;
@@ -52,21 +47,18 @@ export async function markupPopBooks(category) {
       booksList.innerHTML = '';
       const categoryBooks = await booksApiService.certainCategory(category);
       if (categoryBooks.length === 0) {
-        console.log('ADD BLOCK not Found');
         return;
       }
       const limitedBooks = categoryBooks;
       const markup = limitedBooks
-        .map(({ book_image, title, author }) => {
-          return bookCardTemplate(book_image, title, author);
+        .map(({ book_image, title, author, _id }) => {
+          return bookCardTemplate(book_image, title, author, _id);
         })
         .join('');
 
       booksListTitle.textContent = category;
       booksListTitle.innerHTML = renderTitleWithLastWord(category);
       booksList.insertAdjacentHTML('beforeend', markup);
-    } catch (error) {
-      console.log('Error markPopBooks Certain Category', error);
-    }
+    } catch (error) {}
   }
 }
