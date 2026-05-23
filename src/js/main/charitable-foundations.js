@@ -4,10 +4,9 @@ export async function markupCharitableFundations() {
   const listCharitableFundation = document.querySelector('.foundations__list');
   const btn = document.querySelector('.support__slider-btn');
   if (!listCharitableFundation) {
-    console.log('Charitable fundations not found!');
     return;
   }
-  // TODO:jvdfjvnfdnv
+
   try {
     const markup = company
       .map(({ title, url, img }, index) => {
@@ -24,7 +23,6 @@ export async function markupCharitableFundations() {
     listCharitableFundation.insertAdjacentHTML('afterbegin', markup);
 
     if (btn) {
-      // скролл: высота строки (32px) + gap (20px) * 3 элемента = 156px
       const scrollStep = 52;
 
       btn.addEventListener('click', () => {

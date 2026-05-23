@@ -282,6 +282,7 @@
     margin: 0 auto;
 }
 
+/* TODO:do hover on card */
 .card__cover {
     width: 100%;
     max-width: 335px;
@@ -299,6 +300,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    cursor: pointer;
 }
 
 .card__info {

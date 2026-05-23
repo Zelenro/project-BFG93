@@ -28,13 +28,12 @@ export const booksApiService = {
     if (!response.ok) {
       throw new Error('Failed to fetch Top books');
     }
-    // console.log('first');
+
     return response.json();
   },
 
   async certainCategory(category) {
     if (category === 'All Categories') {
-      // console.log('topBooks');
       return this.topBooks();
     }
     const encodeCategoryQuery = encodeURIComponent(category);
