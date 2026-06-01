@@ -1,5 +1,3 @@
-import { toggleModalBtnAddToShopingList } from './toggle-modal-btn-add-to-shoping-list';
-
 export function addToShoppimgList(id, userName = 'Stefan') {
   try {
     const stateStorage = localStorage.getItem(userName);

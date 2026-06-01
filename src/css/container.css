@@ -1,9 +1,25 @@
 /* ===== CONTAINER ===== */
 .container {
-  padding: 0 20px;
+  /* min-width: 320px; */
+  padding: 0 0px;
   margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
+  /* width: 100%; */
+  /* box-sizing: border-box; */
+  /* max-width: 375px; */
+}
+
+
+
+/* phone — от 375px */
+@media (min-width: 375px) {
+  .container {
+    max-width: 375px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 
@@ -19,9 +35,9 @@
 }
 
 /* Desktop — от 1440px */
-@media (min-width: 1439px) {
+@media (min-width: 1440px) {
   .container {
-    max-width: 1441px;
+    max-width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
     margin-right: auto;

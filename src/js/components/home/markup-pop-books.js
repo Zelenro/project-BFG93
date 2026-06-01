@@ -1,7 +1,7 @@
-import { booksApiService } from '../api/api-service';
+import { booksApiService } from '../../api/api-service';
 import { bookCardTemplate } from './book-card-template';
-import { categoryBlockTemplate } from './home/category-block-template';
-import { renderTitleWithLastWord } from './render-title';
+import { categoryBlockTemplate } from './category-block-template';
+import { renderTitleWithLastWord } from '../../helpers/render-title';
 
 function booksCount() {
   const width = window.innerWidth;
