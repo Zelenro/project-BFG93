@@ -12,9 +12,12 @@
 @import url('./variables.css');
 
 /* Sections style */
-@import url('./header/header.css');
-@import url('./main/home.css');
-@import url('./main/modal.css');
+@import url('./components/header.css');
+@import url('./components/home.css');
+@import url('./components/modal.css');
+@import url('./components/charitable-foundations.css');
+@import url('./components/refactor-shopping-list.css');
+@import url('./components/pagination-shopping-list.css');
 
 
 /* @import url('./footer/footer.css'); */

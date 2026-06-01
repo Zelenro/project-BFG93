@@ -1,4 +1,7 @@
 export function activationCurrentLink(categoryName) {
+  const fullUrl = window.location.href;
+  const path = window.location.pathname;
+
   const allCategoryLinks = Array.from(
     document.querySelectorAll('.categories__link')
   );

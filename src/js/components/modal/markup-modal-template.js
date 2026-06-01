@@ -1,11 +1,15 @@
-import sprite from '../../img/sprite.svg';
+import sprite from '../../../img/sprite.svg';
 
 export function markupModalTemplate(book, isInShoppingList) {
   const { _id, book_image, title, author, description, buy_links } = book;
 
   const shopsMarkup = buy_links
     .map(({ name, url }) => {
-      const shopClass = name.toLowerCase().replace(' ', '-');
+      let shopClass = name
+        .toLowerCase()
+        .replace(/&/g, '')
+        .replace(/[\s-]+/g, '-')
+        .trim();
 
       return `
          <a href="${url}" target="_blank" rel="noopener noreferrer" class="modal__shop-link ${shopClass}">

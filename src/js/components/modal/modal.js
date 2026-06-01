@@ -1,8 +1,8 @@
-import { booksApiService } from '../api/api-service';
+import { booksApiService } from '../../api/api-service';
 import { addToShoppimgList } from './add-to-shopping-list';
 import { markupModalTemplate } from './markup-modal-template';
 import { stateModalBtnShopping } from './stateModalBtnShopping';
-import { toggleModalBtnAddToShopingList } from './toggle-modal-btn-add-to-shoping-list';
+import { toggleModalBtnAddToShopingList } from './toggle-modal-btn-add-to-shopping-list';
 
 const modal = document.querySelector('.modal');
 let currentBook = null;

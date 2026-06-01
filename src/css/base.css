@@ -13,8 +13,7 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  display: block;
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
@@ -25,5 +24,5 @@ body {
 }
 
 main {
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }

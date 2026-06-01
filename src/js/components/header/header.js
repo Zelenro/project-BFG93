@@ -14,10 +14,10 @@ export const headerJS = () => {
       }
     });
   }
- 
+
   const currentPath = window.location.pathname;
- 
-  navLinks.forEach(link => {   
+
+  navLinks.forEach(link => {
     const linkPath = link.pathname;
     if (currentPath === linkPath) {
       link.classList.add('is-active');

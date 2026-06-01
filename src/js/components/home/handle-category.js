@@ -1,5 +1,5 @@
-import { activationCurrentLink } from '../activation-current-link';
-import { markupPopBooks } from '../markup-pop-books';
+import { activationCurrentLink } from '../../helpers/activation-current-link';
+import { markupPopBooks } from './markup-pop-books';
 
 export async function handleCategory(e) {
   const targetBtn = e.target.closest('.categories__link');

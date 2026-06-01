@@ -1,0 +1,425 @@
+.js-shoppig-list {
+    /* margin-top: 40px; */
+    padding-top: 40px;
+    height: 935px;
+    /* background-color: gray; */
+
+
+    .wrapper-shopping-list {
+        position: relative;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        width: 100%;
+
+
+
+        .shopping-list {
+            margin-top: 40px;
+        }
+
+        .charitable__foundations {
+            display: none;
+        }
+
+
+
+        /* 1. ГЛАВНЫЙ КОНТЕЙНЕР ДЛЯ ДВУХ МАГАЗИНОВ (Общая рамка 56х16 из Figma) */
+        .modal__where-to-buy {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* Расталкивает Amazon и Книгу по краям рамки */
+            width: 56px;
+            /* Точная ширина из макета Figma */
+            height: 16px;
+            /* Точная высота из макета Figma */
+
+            position: absolute;
+            /* Прижимает весь блок в правый нижний угол карточки */
+            right: 14px;
+            bottom: 14px;
+        }
+
+        /* 2. СТИЛИ ДЛЯ ССЫЛОК ВНУТРИ КОНТЕЙНЕРА */
+        .modal__shop-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            /* Занимает всю высоту родителя (16px) */
+        }
+
+        /* 3. ОГРАНИЧЕНИЯ ИМПОРТИРУЕМЫХ ИКОНОК */
+        .shop-link-img {
+            display: block;
+            max-height: 100%;
+            /* Высота картинки строго ограничена 16px */
+            object-fit: contain;
+            /* Логотипы не будут сжиматься или искажаться */
+
+            /* Стилизация под макет: серые иконки, яркие при наведении */
+            filter: grayscale(1);
+            opacity: 0.6;
+            transition: opacity 0.2s ease, filter 0.2s ease;
+
+            &:hover {
+                filter: grayscale(0);
+                opacity: 1;
+            }
+        }
+
+        /* Индивидуальные размеры логотипов под рамку */
+        .shop-link-img.amazon {
+            width: 32px;
+            /* Ширина логотипа Amazon */
+        }
+
+        .shop-link-img.apple-books {
+            width: 16px;
+            /* Квадратная иконка Apple Books */
+        }
+
+
+
+        .page-title {
+            display: block;
+            width: 193px;
+            height: 38px;
+            padding-bottom: 40px;
+
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 38px;
+            letter-spacing: -0.04em;
+            color: rgba(17, 17, 17, 1);
+        }
+
+        .acent-word {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 38px;
+            letter-spacing: -0.04em;
+            color: rgba(79, 46, 232, 1);
+        }
+
+
+
+        .book-card {
+            display: flex;
+            position: relative;
+            /* max-width: 335px; */
+            /* max-height: 170px; */
+            /* width: 100%; */
+            height: 170px;
+            margin-bottom: 20px;
+            padding: 14px;
+            border: 2px solid rgba(79, 46, 232, 0.4);
+            border-radius: 16px;
+            /* margin-left: auto; */
+            /* margin-right: auto; */
+        }
+
+        .book-info {
+            display: flex;
+            flex-direction: column;
+            padding-left: 14px;
+        }
+
+        .book-cover {
+            display: block;
+            width: 100px;
+            /* height: 142px; */
+            object-fit: cover;
+            object-position: center;
+
+            border-radius: 8px;
+        }
+
+        .book-title {
+            display: block;
+            width: 144px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 18px;
+            letter-spacing: -0.04em;
+            color: rgba(17, 17, 17, 1);
+        }
+
+        .book-genre {
+            display: block;
+            width: 144px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            margin-top: 4px;
+
+            /* white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; */
+
+
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: -0.03em;
+            color: rgba(180, 175, 175, 1);
+        }
+
+        .book-description {
+            /* display: block; */
+            /* height: 68px; */
+            /* width: 193px; */
+            /* max-width: 193px; */
+            /* max-height: 68px; */
+            margin-top: 8px;
+            /* margin-left: 14px; */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: -0.03em;
+            color: rgba(17, 17, 17, 1);
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+
+        }
+
+        .book-author {
+            /* display: block; */
+            display: flex;
+            margin-top: auto;
+            /* margin-left: 14px; */
+            width: 130px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: -0.03em;
+            color: rgba(180, 175, 175, 1);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .delete-btn {
+            display: block;
+            width: 28px;
+            height: 28px;
+            border-radius: 14px;
+            border: none;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            position: absolute;
+            right: 14px;
+        }
+
+        .nav-logo-icon {
+            width: 28px;
+            height: 28px;
+        }
+
+        .wrapper-list-shopping {
+            width: 100%;
+        }
+
+        .book-list {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
+            /* background-color: tan; */
+
+            /* max-width: 335px; */
+            /* display: block; */
+            /* height: 170px; */
+            /* margin-top: 80px; */
+
+        }
+
+        .shopping-list-default {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 80px;
+
+            width: 265px;
+            height: 248px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .list-default-info {
+            display: block;
+            text-align: center;
+            margin-bottom: 14px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 244px;
+            height: 36px;
+
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: -0.02em;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .card-list-default {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 265px;
+            height: 198px;
+        }
+
+
+
+        @media (min-width: 768px) {
+            .wrapper-shopping-list {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .wrapper-list-shopping {
+                margin: 0;
+                width: 100%;
+            }
+
+
+            .book-card {
+                padding: 24px;
+                border: 2px solid rgba(79, 46, 232, 0.4);
+                border-radius: 16px;
+            }
+
+            .book-cover {
+                width: 116px;
+            }
+
+            .book-info {
+                padding-left: 24px;
+            }
+
+            .book-title {
+                width: 100%;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
+
+            .book-genre {
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+
+            .modal__where-to-buy {
+                width: 92px;
+                height: 27px;
+                right: 24px;
+                bottom: 24px;
+            }
+
+            .shop-link-img.amazon {
+                width: 48px;
+            }
+
+            .shop-link-img.apple-books {
+                width: 28px;
+            }
+
+            .shopping-list-default {
+                width: 349px;
+                padding-top: 100px;
+                /* background-color: tomato; */
+            }
+
+            .page-title {
+                width: 292px;
+                height: 52px;
+                font-size: 48px;
+                line-height: 52px;
+            }
+
+            .acent-word {
+                font-size: 48px;
+                line-height: 52px;
+            }
+
+            .list-default-info {
+                display: block;
+                width: 349px;
+                height: 48px;
+                font-size: 18px;
+                line-height: 24px;
+                /* background-color: blueviolet; */
+            }
+
+            .card-list-default {
+                display: block;
+                margin-top: auto;
+                width: 322px;
+                height: 241px;
+                /* background-color: greenyellow; */
+            }
+
+            .delete-btn {
+                display: block;
+                width: 34px;
+                height: 34px;
+                border-radius: 17px;
+                border: none;
+                margin: 0;
+                padding: 0;
+                background-color: transparent;
+                position: absolute;
+                right: 24px;
+                top: 24px;
+            }
+
+
+
+        }
+
+        @media (min-width: 1440px) {
+            .charitable__foundations {
+                display: block;
+            }
+
+            .wrapper-list-shopping {
+                margin-left: 40px;
+            }
+        }
+    }
+}
