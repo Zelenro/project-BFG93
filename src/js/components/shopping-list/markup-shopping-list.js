@@ -1,10 +1,6 @@
 import { markupCardBooks } from './markup-card-book';
 
-export function markupShoppingList(arrayBooks, user) {
-  const markup = arrayBooks
-    .map(book => {
-      return markupCardBooks(book, user);
-    })
-    .join('');
-  return markup;
+export function markupShoppingList(booksArray) {
+  if (!booksArray || booksArray.length === 0) return '';
+  return booksArray.map(book => markupCardBooks(book)).join('');
 }

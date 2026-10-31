@@ -4,6 +4,9 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   border: 1.5px solid rgba(17, 17, 17, 1);
+  /* height: 64px; */
+  position: relative;
+  z-index: 99999;
 }
 
 /* ===== NAV ===== */
@@ -11,8 +14,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  /* padding-top: 18px; */
+  /* padding-bottom: 18px; */
+  height: 64px;
 }
 
 /* ===== LOGO ===== */
@@ -31,8 +35,54 @@
   fill: var(--color-primary);
 }
 
+/* ======= Sign UP ========= */
+
+.header-signup-btn.is-hidden {
+  /* display: none; */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+
+}
+
+
+.header-signup-btn {
+  display: flex;
+  background-color: rgba(79, 46, 232, 1);
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  height: 48px;
+  width: 118px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1.5px;
+  border-radius: 18px;
+  padding: 15px 14px;
+
+
+  font-family: var(--font-main);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+
+}
+
+
+
 /* ===== NAV LIST ===== */
 .nav-list {
+  display: none;
+  /* display: flex; */
+}
+
+.nav-list.is-hidden {
   display: none;
 }
 
@@ -44,15 +94,106 @@
 }
 
 /* ===== BURGER ===== */
+.menu-toggle.is-hidden {
+  display: none;
+}
+
 .menu-toggle {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  padding: 0;
+  justify-content: center;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 28px;
+  height: 28px;
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--color-text);
+  color: var(--color-text); */
+
+  --toggle-size: 44px;
+  --icon-size: 28px;
+
+  width: var(--toggle-size);
+  height: var(--toggle-size);
+  min-width: var(--toggle-size);
+  min-height: var(--toggle-size);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  padding: calc((var(--toggle-size) - var(--icon-size)) / 2);
+
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
 }
+
+
+/* Управление SVG иконками */
+.menu-toggle svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  color: #1e293b;
+}
+
+/* Иконки внутри кнопки */
+.menu-toggle .burger-menu,
+.menu-toggle .cross-menu {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* По умолчанию показываем бургер, скрываем крестик */
+.menu-toggle .cross-menu {
+  display: none;
+}
+
+/* Когда меню открыто - показываем крестик, скрываем бургер */
+.menu-toggle.is-open .burger-menu {
+  display: none;
+}
+
+.menu-toggle.is-open .cross-menu {
+  display: block;
+}
+
+.theme-switch__input {
+  margin: 0;
+}
+
+.menu-toggle svg,
+.menu-toggle use {
+  pointer-events: none;
+  /* Иконка больше не перехватывает клик */
+}
+
+/* ===== MENU ===== */
+
+
+
+@keyframes fadeInUp {
+  /* from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  } */
+}
+
+
 
 /* ===== THEME SWITCH ===== */
 .theme-switch__input {
@@ -89,6 +230,11 @@
 
 /* ===== USER MENU ===== */
 .user-menu {
+  display: none;
+  position: relative;
+}
+
+.user-menu.is-hidden {
   display: none;
   position: relative;
 }
@@ -157,6 +303,7 @@
 .logout-btn {
   width: 100%;
   padding: 12px 18px;
+  margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -181,8 +328,7 @@
 /* ===== TABLET — от 768px ===== */
 @media (min-width: 768px) {
   .nav {
-    padding-top: 22px;
-    padding-bottom: 22px;
+    height: 72px;
   }
 
   .menu-toggle {
@@ -224,7 +370,6 @@
 /* ===== DESKTOP — от 1440px ===== */
 @media (min-width: 1440px) {
   .nav {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    /* display: block; */
   }
 }

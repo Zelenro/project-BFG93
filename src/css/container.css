@@ -1,46 +1,31 @@
-/* ===== CONTAINER ===== */
 .container {
-  /* min-width: 320px; */
   padding: 0 0px;
   margin: 0 auto;
-  /* width: 100%; */
-  /* box-sizing: border-box; */
-  /* max-width: 375px; */
 }
 
 
-
-/* phone — от 375px */
 @media (min-width: 375px) {
   .container {
-    max-width: 375px;
+    max-width: 376px;
     padding-left: 20px;
     padding-right: 20px;
-    margin: 0;
-    margin-right: auto;
-    margin-left: auto;
   }
 }
 
 
-/* Tablet — от 768px */
 @media (min-width: 768px) {
   .container {
-    max-width: 768px;
+    max-width: 769px;
     padding-left: 32px;
     padding-right: 32px;
-    margin-right: auto;
-    margin-left: auto;
   }
 }
 
-/* Desktop — от 1440px */
+
 @media (min-width: 1440px) {
   .container {
-    max-width: 1440px;
+    max-width: 1441px;
     padding-left: 24px;
     padding-right: 24px;
-    margin-right: auto;
-    margin-left: auto;
   }
 }

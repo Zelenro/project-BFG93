@@ -1,45 +1,93 @@
-import { getWindowSize } from '../../helpers/getWindowSize';
-import { createPaginationHandler } from './create-pagination-handler';
-import { getItemsFromLocalStorage } from './get-items-from-local-storage';
-import { handelShoppingList } from './handel-shopping-list';
-import { pagination } from './pagination';
+import { getRefs } from '../../helpers/get-refs';
+import { markupShoppingList } from './markup-shopping-list';
+import { markupPaginationBlock } from './markup-pagination-block';
 import { shoppingListDefault } from './shopping-list-deafault';
-import { state } from './state-shopingList';
+import {
+  getBooks,
+  getCurrentPage,
+  getPaginatedBooks,
+  getTotalPages,
+  initItemsPerPage,
+  removeBook,
+  setCurrentPage,
+} from './state-shopingList';
 
-const shoppingListRef = document.querySelector('#dynamic-book-list');
-const paginationBlock = document.querySelector('.js-pagination');
+const refs = getRefs();
 
-const handlePaginationClick = createPaginationHandler(state);
-
-export async function refactorShoppingList(user = 'Stefan') {
-  if (!user) return state.arrBooksUser;
-  state.userName = user;
-  const { width, height } = getWindowSize();
-  if (width < 768) state.itemsPerPage = 4;
-
-  state.arrBooksUser = await getItemsFromLocalStorage(state.userName);
-
-  if (state.arrBooksUser.length === 0 || !state.arrBooksUser) {
-    shoppingListRef.innerHTML = shoppingListDefault();
-    if (paginationBlock) {
-      paginationBlock.innerHTML = '';
-    }
+export async function refactorShoppingList() {
+  initItemsPerPage();
+  const allBooks = getBooks();
+  if (allBooks.length === 0) {
+    refs.shoppingListContainer.innerHTML = shoppingListDefault();
+    if (refs.paginationBlock) refs.paginationBlock.innerHTML = '';
     return;
   }
-  const totalPages = Math.ceil(state.arrBooksUser.length / state.itemsPerPage);
-  if (state.currentPage > totalPages && totalPages > 0) {
-    state.currentPage = totalPages;
+
+  const totalPages = getTotalPages();
+  if (getCurrentPage() > totalPages) {
+    setCurrentPage(totalPages);
   }
 
-  pagination(
-    null,
-    state,
-    totalPages,
-    paginationBlock,
-    shoppingListRef,
-    handelShoppingList
-  );
+  const booksToRender = getPaginatedBooks();
+  refs.shoppingListContainer.innerHTML = markupShoppingList(booksToRender);
+  renderPagination(totalPages);
+  initShoppingListListeners();
+}
 
-  paginationBlock.removeEventListener('click', handlePaginationClick);
-  paginationBlock.addEventListener('click', handlePaginationClick);
+function renderPagination(totalPages) {
+  if (!refs.paginationBlock) return;
+
+  if (totalPages <= 1) {
+    refs.paginationBlock.innerHTML = '';
+    refs.paginationBlock.classList.add('visually-hidden');
+    return;
+  }
+
+  refs.paginationBlock.classList.remove('visually-hidden');
+  markupPaginationBlock(refs.paginationBlock, getCurrentPage(), totalPages);
+}
+
+function initShoppingListListeners() {
+  refs.shoppingListContainer.removeEventListener(
+    'click',
+    handleDeleteBookClick
+  );
+  refs.shoppingListContainer.addEventListener('click', handleDeleteBookClick);
+
+  if (refs.paginationBlock) {
+    refs.paginationBlock.removeEventListener('click', handlePaginationClick);
+    refs.paginationBlock.addEventListener('click', handlePaginationClick);
+  }
+}
+
+async function handleDeleteBookClick(e) {
+  const deleteBtn = e.target.closest(`.js-delete-btn`);
+  if (!deleteBtn) return;
+
+  const bookId = deleteBtn.dataset.id;
+  if (bookId) {
+    await removeBook(bookId);
+    refactorShoppingList();
+  }
+}
+
+function handlePaginationClick(e) {
+  const pageBtn = e.target.closest('.pagination__btn');
+
+  if (!pageBtn || pageBtn.hasAttribute('disabled')) return;
+
+  const action = pageBtn.dataset.page;
+  const total = getTotalPages();
+  const current = getCurrentPage();
+  let targetPage = current;
+
+  if (action === 'first') targetPage = 1;
+  if (action === 'prev' && current > 1) targetPage = current - 1;
+  if (action === 'next' && current < total) targetPage = current + 1;
+  if (action === 'last') targetPage = total;
+
+  if (targetPage !== current) {
+    setCurrentPage(targetPage);
+    refactorShoppingList();
+  }
 }

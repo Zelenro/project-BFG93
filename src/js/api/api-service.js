@@ -28,7 +28,6 @@ export const booksApiService = {
     if (!response.ok) {
       throw new Error('Failed to fetch Top books');
     }
-
     return response.json();
   },
 

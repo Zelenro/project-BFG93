@@ -3,16 +3,16 @@ import { markupCharitableFundations } from '../../helpers/charitable-foundations
 import { markupListCategoryBooks } from '../../helpers/all-categories-books';
 import { markupPopBooks } from './markup-pop-books';
 import { openModal } from '../modal/modal';
+import { getRefs } from '../../helpers/get-refs';
 
-const categoriesList = document.querySelector('.categories__list');
-const booksList = document.querySelector('.books__list');
+const refs = getRefs();
 
-if (categoriesList) {
-  categoriesList.addEventListener('click', handleCategory);
+if (refs.categoriesList) {
+  refs.categoriesList.addEventListener('click', handleCategory);
 }
 
-if (booksList) {
-  booksList.addEventListener('click', openModal);
+if (refs.booksList) {
+  refs.booksList.addEventListener('click', openModal);
 }
 
 export async function homePage() {

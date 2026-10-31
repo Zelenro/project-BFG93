@@ -1,9 +1,10 @@
 import { company } from '../api/company';
+import { getRefs } from './get-refs';
 
 export async function markupCharitableFundations() {
-  const listCharitableFundation = document.querySelector('.foundations__list');
-  const btn = document.querySelector('.support__slider-btn');
-  if (!listCharitableFundation) {
+  const refs = getRefs();
+
+  if (!refs.listCharitableFoundation) {
     return;
   }
 
@@ -19,25 +20,25 @@ export async function markupCharitableFundations() {
         </li>`;
       })
       .join('');
-    listCharitableFundation.innerHTML = '';
-    listCharitableFundation.insertAdjacentHTML('afterbegin', markup);
+    refs.listCharitableFoundation.innerHTML = '';
+    refs.listCharitableFoundation.insertAdjacentHTML('afterbegin', markup);
 
-    if (btn) {
+    if (refs.supportSliderBtn) {
       const scrollStep = 52;
 
-      btn.addEventListener('click', () => {
+      refs.supportSliderBtn.addEventListener('click', () => {
         const isEnd =
-          listCharitableFundation.scrollTop +
-            listCharitableFundation.clientHeight >=
-          listCharitableFundation.scrollHeight - 5;
+          refs.listCharitableFoundation.scrollTop +
+            refs.listCharitableFoundation.clientHeight >=
+          refs.listCharitableFoundation.scrollHeight - 5;
 
         if (isEnd) {
-          listCharitableFundation.scrollTo({
+          refs.listCharitableFoundation.scrollTo({
             top: 0,
             behavior: 'smooth',
           });
         } else {
-          listCharitableFundation.scrollBy({
+          refs.listCharitableFoundation.scrollBy({
             top: scrollStep,
             behavior: 'smooth',
           });

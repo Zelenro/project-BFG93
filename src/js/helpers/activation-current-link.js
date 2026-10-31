@@ -1,4 +1,5 @@
 export function activationCurrentLink(categoryName) {
+  if (!categoryName) return;
   const fullUrl = window.location.href;
   const path = window.location.pathname;
 

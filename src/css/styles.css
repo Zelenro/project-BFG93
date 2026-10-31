@@ -18,6 +18,10 @@
 @import url('./components/charitable-foundations.css');
 @import url('./components/refactor-shopping-list.css');
 @import url('./components/pagination-shopping-list.css');
+@import url('./components/auth-modal.css');
+@import url('./components/menu.css');
+@import url('./components/loader.css');
+
 
 
 /* @import url('./footer/footer.css'); */

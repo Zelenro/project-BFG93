@@ -48,8 +48,8 @@
                 height="37"
               />
             </div>
+            <span class="user-bar__name"></span>
 
-            <span class="user-bar__name">Stephen</span>
             <svg class="user-bar__arrow" width="23" height="26">
               <use href="{=$icon-path}#Vector"></use>
             </svg>
@@ -64,10 +64,16 @@
             </button>
           </div>
         </div>
-
+        <button class="header-signup-btn is-hidden">
+          Sign up
+          <svg class="signUp-btn__icon" width="20" height="20">
+            <use href="{=$icon-path}#arrow-narrow-right"></use>
+          </svg>
+        </button>
         <button class="menu-toggle" aria-label="Open menu">
-          <svg width="28" height="28">
-            <use href="{=$icon-path}#align-left"></use>
+          <svg width="14" height="14">
+            <use href="{=$icon-path}#align-left" class="burger-menu"></use>
+            <use href="{=$icon-path}#cross" class="cross-menu"></use>
           </svg>
         </button>
       </div>

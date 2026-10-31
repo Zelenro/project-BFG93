@@ -1,9 +1,13 @@
 import sprite from '../../../img/sprite.svg';
 
-export function markupModalTemplate(book, isInShoppingList) {
+export function markupModalTemplate(book, isInShoppingList, isLoggedIn) {
   const { _id, book_image, title, author, description, buy_links } = book;
 
   const shopsMarkup = buy_links
+    .filter(({ name }) => {
+      const shopName = name.toLowerCase();
+      return shopName.includes('amazon') || shopName.includes('apple');
+    })
     .map(({ name, url }) => {
       let shopClass = name
         .toLowerCase()
@@ -13,16 +17,26 @@ export function markupModalTemplate(book, isInShoppingList) {
 
       return `
          <a href="${url}" target="_blank" rel="noopener noreferrer" class="modal__shop-link ${shopClass}">
-          <img src="../../img/${shopClass}.png" alt="${shopClass}" class="shop-link-img ${shopClass}"><span class="visually-hidden"></span>
+          <img src="./img/${shopClass}.png" alt="${shopClass}" class="shop-link-img ${shopClass}"><span class="visually-hidden"></span>
         </a>
       `;
     })
     .join('');
 
-  const btnText = isInShoppingList
-    ? 'REMOVE FROM THE SHOPPING LIST'
-    : 'ADD TO SHOPPING LIST';
-  const notificationClass = isInShoppingList ? '' : 'visually-hidden';
+
+  let btnText = 'ADD TO SHOPPING LIST';
+  let btnDisabledAttr = '';
+  let btnDisabledClass = '';
+  let notificationClass = 'visually-hidden';
+
+  if (!isLoggedIn) {
+    btnText = 'LOG IN TO ADD TO SHOPPING LIST';
+    btnDisabledAttr = 'disabled="true"';
+    btnDisabledClass = 'is-disabled';
+  } else if (isInShoppingList) {
+    btnText = 'REMOVE FROM THE SHOPPING LIST';
+    notificationClass = '';
+  }
 
   return `
     <div class="modal__book-container">

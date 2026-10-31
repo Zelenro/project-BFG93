@@ -1,12 +1,14 @@
 import { booksApiService } from '../api/api-service';
+import { getRefs } from './get-refs';
 
 export async function markupListCategoryBooks() {
-  const listTopBooks = document.querySelector('.categories__list');
+  const refs = getRefs();
+
   const allCategories = `<li class="categories__item">
           <button class="categories__link is-active" type="button">All Categories</button>
         </li>`;
 
-  if (!listTopBooks) {
+  if (!refs.categoriesList) {
     return;
   }
   try {
@@ -19,9 +21,9 @@ export async function markupListCategoryBooks() {
         </li>`;
       })
       .join('');
-    listTopBooks.innerHTML = '';
-    listTopBooks.insertAdjacentHTML('afterbegin', allCategories);
-    listTopBooks.insertAdjacentHTML('beforeend', markup);
+    refs.categoriesList.innerHTML = '';
+    refs.categoriesList.insertAdjacentHTML('afterbegin', allCategories);
+    refs.categoriesList.insertAdjacentHTML('beforeend', markup);
   } catch (error) {
     console.error('Error categories list', error);
   }

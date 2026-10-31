@@ -1,9 +1,10 @@
 import { pagination } from './pagination';
 import { handelShoppingList } from './handel-shopping-list';
-
-const shoppingListRef = document.querySelector('#dynamic-book-list');
+import { getRefs } from '../../helpers/get-refs';
 
 export function createPaginationHandler(stateObj) {
+  const refs = getRefs();
+
   return function handlePagination(e) {
     const btn = e.target.dataset.page;
     if (!btn) return;
@@ -16,7 +17,7 @@ export function createPaginationHandler(stateObj) {
       stateObj,
       totalPages,
       currentPaginationBlock,
-      shoppingListRef,
+      refs.shoppingListRef,
       handelShoppingList
     );
   };

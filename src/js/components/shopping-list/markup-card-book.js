@@ -1,4 +1,4 @@
-export function markupCardBooks(book, user) {
+export function markupCardBooks(book) {
   const { _id, book_image, title, author, description, buy_links, list_name } =
     book;
 
@@ -8,28 +8,22 @@ export function markupCardBooks(book, user) {
       return shopName.includes('amazon') || shopName.includes('apple');
     })
     .map(({ name, url }) => {
-      let shopClass = name
+      const shopClass = name
         .toLowerCase()
-        .replace(/&/g, '')
         .replace(/[\s-]+/g, '-')
         .trim();
 
-      if (shopClass === 'barnes-noble' || shopClass === 'barnes-and-noble') {
-        shopClass = 'barnes-and-noble';
-      }
-
-      if (shopClass === 'bookshop.org' || shopClass === 'bookshop-org') {
-        shopClass = 'bookshop';
-      }
-
-      return /*html*/ `<a href="${url}" target="_blank" rel="noopener noreferrer" class="modal__shop-link ${shopClass}">
-          <img src="../../../img/${shopClass}.png" alt="${shopClass}" class="shop-link-img ${shopClass}"><span class="visually-hidden"></span>
+      return /*html*/ `
+        <a href="${url}" target="_blank" rel="noopener noreferrer" class="modal__shop-link ${shopClass}">
+          <img src="./img/${shopClass}.png" alt="${name}" class="shop-link-img ${shopClass}">
+          <span class="visually-hidden">${name}</span>
         </a>
       `;
     })
     .join('');
 
-  return /*html*/ `<li class="book-card">
+  return /*html*/ `
+  <li class="book-card" data-id="${_id}">
     <img src="${book_image}" alt="${title} book cover" class="book-cover" />
 
     <div class="book-info">
@@ -42,13 +36,12 @@ export function markupCardBooks(book, user) {
     </div>
 
     <button
-      class="delete-btn"
-      data-id="${_id}"
-      data-user="${user}"
+      class="delete-btn js-delete-btn" 
+      data-id="${_id}"      
       aria-label="Remove from list"
     >
       <svg class="nav-logo-icon" width="24" height="24">
-        <use href="../../../img/sprite.svg#dump"></use>
+        <use href="./img/sprite.svg#dump"></use>
       </svg>
     </button>
   </li>`;

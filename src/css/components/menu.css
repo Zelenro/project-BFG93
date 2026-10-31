@@ -1,0 +1,166 @@
+.menu {
+    display: none;
+}
+
+.menu.is-open {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    z-index: 999;
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.fullscreen-menu__container {
+    display: block;
+}
+
+.fullscreen-menu {
+    margin-top: 84px;
+    margin-left: 20px;
+}
+
+.menu-user-avatar {
+    display: flex;
+    align-items: center;
+
+}
+
+.menu__avatar {
+    width: 34px;
+    height: 34px;
+}
+
+.menu__user-name {
+    margin-left: 9px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: #FFF;
+}
+
+.fullscreen-menu__nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 126px;
+    width: 100%;
+}
+
+.fullscreen-menu__list {
+    margin-left: 129px;
+}
+
+.fullscreen-menu__item {
+    margin-top: 24px;
+}
+
+.fullscreen-menu__link {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: #FFF;
+}
+
+
+.fullscreen-menu__link:hover,
+.fullscreen-menu__link:focus {
+    background-color: rgba(234, 198, 69, 1);
+    border-radius: 36px;
+    padding: 8px 16px;
+    color: black;
+}
+
+
+.fullscreen-menu__logout-btn {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    width: 118px;
+    height: 48px;
+    border: 1.5px;
+    border-radius: 18px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: rgba(17, 17, 17, 1);
+}
+
+.logout-btn__icon {
+    fill: rgba(234, 198, 69, 1);
+}
+
+.background-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 442px;
+    left: -45px;
+    width: 100vw;
+    opacity: 1;
+
+    rotate: -15deg;
+    transform-origin: top right;
+
+    z-index: 998;
+
+}
+
+.background-list-book {
+    display: grid;
+    grid-template-columns: repeat(4, 89px);
+    gap: 24px;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 450px;
+    max-width: 768px;
+    padding: 0;
+    margin: 0;
+
+}
+
+.menu-background-item {
+    display: block;
+}
+
+.menu-img-background {
+    display: block;
+    min-width: 89px;
+    min-height: 134px;
+    object-fit: cover;
+    border-radius: 8px;
+
+    /* Опционально: мягкое появление картинки после загрузки */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -20,14 +20,18 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <div id="page-loader" class="page-loader">
+      <div class="spinner"></div>
+    </div>
     <load src="./partials/header/header.html" icon-path="./img/sprite.svg" />
 
     <main class="js-home">
       <load src="./partials/main/home/home.html" />
     </main>
-    <!-- <NOT-load src="./partials/footer.html" /> -->
+
     <script type="module" src="./main.js"></script>
     <load src="./partials/main/modal.html" icon-path="./img/sprite.svg" />
-    <!-- <NOT load src="./partials/main/back-to-top.html" /> -->
+    <load src="./partials/main/menu.html" icon-path="./img/sprite.svg" />
+    <load src="./partials/auth/auth-modal.html" />
   </body>
 </html>

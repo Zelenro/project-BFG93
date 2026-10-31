@@ -2,6 +2,7 @@ import { booksApiService } from '../../api/api-service';
 import { bookCardTemplate } from './book-card-template';
 import { categoryBlockTemplate } from './category-block-template';
 import { renderTitleWithLastWord } from '../../helpers/render-title';
+import { getRefs } from '../../helpers/get-refs';
 
 function booksCount() {
   const width = window.innerWidth;
@@ -11,17 +12,17 @@ function booksCount() {
 }
 
 export async function markupPopBooks(category) {
-  const booksList = document.querySelector('.books__list');
-  const booksListTitle = document.querySelector('.books__list__title');
+  const refs = getRefs();
 
-  if (!booksList) {
+  if (!refs.booksList) {
     return;
   }
   if (!category || category === 'All Categories') {
     category = 'All Categories';
-    booksListTitle.innerHTML = renderTitleWithLastWord('Best Sellers Books');
+    refs.booksListTitle.innerHTML =
+      renderTitleWithLastWord('Best Sellers Books');
     try {
-      booksList.innerHTML = '';
+      refs.booksList.innerHTML = '';
       const topBooks = await booksApiService.topBooks();
       const markup = topBooks
         .filter(({ list_name, books }) => {
@@ -37,14 +38,14 @@ export async function markupPopBooks(category) {
           return categoryBlockTemplate(list_name, markup);
         })
         .join('');
-      booksList.insertAdjacentHTML('beforeend', markup);
+      refs.booksList.insertAdjacentHTML('beforeend', markup);
     } catch (error) {
     } finally {
     }
     return;
   } else {
     try {
-      booksList.innerHTML = '';
+      refs.booksList.innerHTML = '';
       const categoryBooks = await booksApiService.certainCategory(category);
       if (categoryBooks.length === 0) {
         return;
@@ -56,9 +57,9 @@ export async function markupPopBooks(category) {
         })
         .join('');
 
-      booksListTitle.textContent = category;
-      booksListTitle.innerHTML = renderTitleWithLastWord(category);
-      booksList.insertAdjacentHTML('beforeend', markup);
+      refs.booksListTitle.textContent = category;
+      refs.booksListTitle.innerHTML = renderTitleWithLastWord(category);
+      refs.booksList.insertAdjacentHTML('beforeend', markup);
     } catch (error) {}
   }
 }

@@ -1,0 +1,67 @@
+<div class="auth-backdrop is-hidden">
+  <div class="auth-modal">
+    <button
+      type="button"
+      class="auth-modal__close-btn"
+      aria-label="Close modal"
+    >
+      <svg class="auth-modal__close-icon" width="14" height="14">
+        <use href="./img/sprite.svg#cross" class="cross-auth"></use>
+      </svg>
+    </button>
+
+    <form class="auth-form" autocomplete="on">
+      <div class="auth-form__inputs-wrapper">
+        <label class="auth-form__field">
+          <input
+            type="text"
+            name="username"
+            class="auth-form__input txtUsername"
+            placeholder="NAME"
+            required
+          />
+        </label>
+
+        <label class="auth-form__field">
+          <input
+            type="email"
+            name="email"
+            class="auth-form__input txtEmail"
+            placeholder="EMAIL"
+            required
+          />
+          <svg class="auth-form__icon" width="18" height="18">
+            <use href="./img/sprite.svg#icon-mail"></use>
+          </svg>
+        </label>
+
+        <label class="auth-form__field">
+          <input
+            type="password"
+            name="password"
+            class="auth-form__input txtPassword"
+            placeholder="PASSWORD"
+            required
+          />
+          <svg class="auth-form__icon" width="16" height="18">
+            <use href="./img/sprite.svg#icon-lock"></use>
+          </svg>
+        </label>
+      </div>
+
+      <button type="submit" class="submit-sign-up is-active">Sign up</button>
+    </form>
+
+    <div class="auth-modal__switch-box">
+      <button type="button" class="switch-sign-up is-active">Sign up</button>
+      <button type="button" class="switch-sign-in">Sign in</button>
+    </div>
+    <button type="button" id="googleSignInBtn" class="btn-google">
+      <img
+        src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+        alt="Google"
+      />
+      Sign in with Google
+    </button>
+  </div>
+</div>
