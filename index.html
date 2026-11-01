@@ -1,128 +1,270 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/project-BFG93/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/project-BFG93/assets/logo-25ra1HsV.png"
+      width="28"
+      height="28"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <script type="module" crossorigin src="/project-BFG93/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/project-BFG93/assets/styles-DvPDDfy5.css">
+    <title>Home</title>
+    <script type="module" crossorigin src="/project-BFG93/assets/vendor-Cpj98N_H.js"></script>
+    <script type="module" crossorigin src="/project-BFG93/assets/main-CoFz8VRM.js"></script>
+    <link rel="stylesheet" crossorigin href="/project-BFG93/assets/main-B51n8RGv.css">
   </head>
   <body>
+    <div id="page-loader" class="page-loader">
+      <div class="spinner"></div>
+    </div>
     <header class="header">
   <div class="container">
     <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="/project-BFG93/assets/sprite-E8vg0sBb.svg#logo"></use>
+      <a class="nav-logo" href="/" aria-label="Site logo">
+        <svg class="nav-logo-icon" width="24" height="24">
+          <use href="/project-BFG93/assets/sprite-xxUWb4nW.svg#favicon"></use>
         </svg>
+        <span class="nav-logo-text">Bookshelf</span>
       </a>
+
       <ul class="nav-list">
         <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
+          <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
+          <a class="nav-link" href="/shopping-list.html"
+            >Shopping lists
+            <svg class="nav-btn-icon" width="20" height="20">
+              <use href="/project-BFG93/assets/sprite-xxUWb4nW.svg#uil_cart"></use>
+            </svg>
+          </a>
         </li>
       </ul>
+
+      <div class="nav-controls">
+        <div class="theme-switch">
+          <input
+            type="checkbox"
+            class="theme-switch__input"
+            id="theme-toggle"
+          />
+          <label for="theme-toggle" class="theme-switch__track">
+            <span class="theme-switch__marker"></span>
+          </label>
+        </div>
+
+        <div class="user-menu">
+          <button
+            class="user-bar"
+            aria-expanded="false"
+            aria-controls="user-dropdown"
+          >
+            <div class="user-bar__avatar">
+              <img
+                src="data:image/png;base64,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"
+                alt="User avatar"
+                width="37"
+                height="37"
+              />
+            </div>
+            <span class="user-bar__name"></span>
+
+            <svg class="user-bar__arrow" width="23" height="26">
+              <use href="/project-BFG93/assets/sprite-xxUWb4nW.svg#Vector"></use>
+            </svg>
+          </button>
+
+          <div class="user-dropdown" id="user-dropdown">
+            <button class="logout-btn">
+              Log out
+              <svg class="logout-btn__icon" width="20" height="20">
+                <use href="/project-BFG93/assets/sprite-xxUWb4nW.svg#arrow-narrow-right"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button class="header-signup-btn is-hidden">
+          Sign up
+          <svg class="signUp-btn__icon" width="20" height="20">
+            <use href="/project-BFG93/assets/sprite-xxUWb4nW.svg#arrow-narrow-right"></use>
+          </svg>
+        </button>
+        <button class="menu-toggle" aria-label="Open menu">
+          <svg width="14" height="14">
+            <use href="/project-BFG93/assets/sprite-xxUWb4nW.svg#align-left" class="burger-menu"></use>
+            <use href="/project-BFG93/assets/sprite-xxUWb4nW.svg#cross" class="cross-menu"></use>
+          </svg>
+        </button>
+      </div>
     </nav>
   </div>
 </header>
 
 
-    <main>
-      <!-- Loads the specified .html file -->
-      <section class="vite-promo">
+    <main class="js-home">
+      <div class="home">
   <div class="container">
-    <div class="vite-promo-thumb">
-      <a
-        class="vite-promo-link"
-        href="https://vitejs.dev/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Link to Vite official website"
-        title="Vite.js  build tool"
-      >
-        <!-- Path to images as from index.html file -->
-        <img
-          class="pic"
-          src="/project-BFG93/assets/vite-logo-9o_aqrTe.png"
-          alt="Vite logo"
-          width="640"
-          height="640"
-        />
-      </a>
-    </div>
-    <h1 class="main-title">
-      <span class="main-title-gradient">Vite</span>
-      Template by
-      <a
-        class="main-title-link"
-        href="https://github.com/goitacademy/vanilla-app-template"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT
-      </a>
-    </h1>
-  </div>
-</section>
+    <div class="wrapper-home-block">
+      <div class="home__sidebar">
+        <nav class="categories">
+          <ul class="categories__list"></ul>
+        </nav>
 
-      <article class="badges">
-  <div class="container">
-    <ul class="badges-list">
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-html-inject"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          HTML Inject
-        </a>
-      </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-full-reload"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Full Reload
-        </a>
-      </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/postcss-sort-media-queries"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Sort Media Queries
-        </a>
-      </li>
-    </ul>
+        <aside class="charitable__foundations">
+  <h2 class="title__charitable__foundations">
+    Support Ukraine
+    <img
+      class="title__charitable__foundations__logo"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAACACAYAAACcL+6CAAAACXBIWXMAACxLAAAsSwGlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAACTBJREFUeAHtneF12zYQx899+V5ngiIT1J2gzARxJog6gZ0JrExgZwI7E9idQMoEdicgO4HdCa68CKppmXe4OwASa+v3nhpXOILkn8DhAAIQwIRBxJP+cwZ77PTCBXykgT02etHagYD09yHs0UHVFp9zDnvSbFTdTQJMjJ9gehwLaaewR2bD921yPzVfOKkSGFvbIJiQeEcwIaZWhRuFzTFMiJ8m5ph/L2SzFcidUAkkn3M+ESE1/i3AjiHhYg+phY1gdQY7JDYSSWCH9Kc/xkFDByPXd7mr0ohKYAfEUnf97FqYa2xJadgyOFEB+1MeIRNepS56qyMhKMeAOxGwP90nFFyL5qlvrQ86NQFxvE9uFpC4hC0wJQE14lkE3IqI/TluFddxD5XRimcVkKhanfv8F4praKEiFvE8AhLVGhYcCRO2KWCfd4NGPH3hOdYLcf5R2HRQAVzFvmY35R1MuMQ6wfYD7I5rcHQTvQJSn7VGo6IRUFNKTUS35BomkwS8ix8O8helR4g7hU3RVjjWpLlg0vWfJZcoCUil4SPIN3WG2+83/w1lkWoSafBeOqdYhQ8ODrr+nz8Ek9JVuVPYFPOTuBp9agSTz1EDlqQP7DNY9v98FUyoKjdQhodCNlqkkOxrf+9XkEDbiMwhUZWhDBpxOihALH0B+HPMQYFKwP5J0I1JVblUKdxmGCM99C/xnpOow5hYlZfguyDtOTQXnd0TSZS+pabqrrHGgV+ENCqFJd7Zdon0EnHgJyFNqmnPMAmoKIXVZw5oqxZHDLsaJnmZanU38fREpFJY4pVj50zTIvXjpXsbxSxgLIVcKShRjR+caVq46tvFezPh7QtLceEM8pB8XInqy/V5/wQHXgGXQtqvUI/cBqQR0m7AgUvAVDWGPDohLXcg4QPz/YOn+hI5k4u4Ih+w3hS03BLIVd/v4CRHQGmoK2cKWpVGJPq/wCTfgZNaAgbwU6s7F4S0nQjYCWkB6pAj7lGNfN0CxoidO/EvUIccAYOQtpMSSHA39BbK55kLG17ldA9zBeSeXE4sWEtALjJwlz4iV0AurAgwPTgfmPXAcgXsuIQ+bKjlB80kXnx1kEE1AcHvB2sE4UFIy3rLV8sHEt5g+tCZ5s1zpz5Q8h8BfNQQsEoMSGQJmBi99frAGgIGIS3rHUuJlUod8723Cgch7WfwwT7MvhDs1AcSnA/xlhap5JZ+KFn+jyghIBsLOoe1pGMC+AjM99lBe80qTHiqnFTKDq0PpbeX8usgk9oC/gYGEje7JoANSfDsmV61BQxgIyhsGrDxvy6BAWw0ChvrQIVUAjvIJFvARCxo9YEacawtsZRn9jybUivWO+Z76802CpsjY0PC2ubGgERtAQMoMU6Ps9hyD7GDApQSkHuSlrCjAT0q23hu7vwdFKB2CSQC6LBMTPqgtAtCWpHlEtkC9k/5pP/nRDBJ+sHElLMxgnLANghpH7DAsjW3gLhaAr/o/7yA/BGUBux8VNiERDotW2tzlmq4BIwnvIVycdsnsKOpxkFps/CKaBYwOuYF6H3b20R+AXwlUDMXURt0B3CK6CmB52DrYaRuohHSHkAeMTkFGUu8GKD2as24zHWWMLuC1fKot32gehD/lpCq703/+Sakp1rujweReB3fEvb29X/CWuLFiK20JP/eulYE5b0CCdrkJrUI2nPOVsjvfuSYK85YLSCu9k5hT4oO/4GrTX442oGdtKPRBRjBlYhSng0UEPDHTQw+0gltxf7xwlohz8uB3Vywc+0p2B8zQ/m+F4NP1r4xKVzTbhM3QISB7WHCdg4OULlXl0QJAW/AAcqlb8z/LgR770O8wkxK9IXNF4/pnSrHWktpEcwh+hY7dpBJCQE9c2CkPmg3ttiv0mLH/CUZmI/JiWM6LJllHNuAAVRuNSVxQP9h8u/g6RMPwPcaLvoS8hl0F02t64xJptL3LnH8AuTFgqnAfZ0Pldg5k3wHT1+6N8C5HEHczTgw1RImBwRQjiWJmSKP7FKIqwBdnQeWCKRjRguUEf1Q4nj1C55EPovEsWco044cU0zA1NP/cQG46mHQUw6DY1NPfQZ6AdWlEFc1h85NG+1q4r5ZNQFjZhdoo8XVpmKtYHMLRjBRmnH1EFu0ccmcq5yAMUPNPn8WAtgFTPlTKy0y0QQKAnrjQGrpsqeGRWi87wwNIUi09Yxic3T9571rvYjwRBaKY63VOUWLQmnEValbYFnIvYhxLJauwhuZP9mYuhBnI+c5wbK0qNwHEWsKODhJE0+UPcIRGQ5nXWIZ6NoWaO+xsAK+gUIM+6q4mudHH/M7hgEzfOwkzSAPGoi46a+xlN/+j2ICDqELxTK7Fc+gDHc1xCNKTe0YIwhp9FKc+ry0S1AHfqjV/BLzeu+8ljwEf2HygSP5Si102LCdox3K/3AjH87/ugZ9B/kWjwM1cGNt3eakzP7/52DbNYh2VzsdidtqLL8VqSkgF1v9NfZlFFHa0GfNTbRV5w0Vq3BNAblZWZIzn0N67YY07sjmjZWW31YREOXInhUoVklpC6bU7mqS+DnbELDUKoEuASNLIS21QY6Ut/ndsQYpDvS+6SKClJbIV6xqiWOlxoL60eCEX6yIuJ3f53ip1GxEXgV7ATPZC5jJXsBM9gJmQmHMO6jDHPj3FtTvXTJp1IPhfruJunrcwEAAfvzxOyi3drfyxrpvspY+OloCL+Aht+VmIqq6E46TJnneeLf4TFGzCktDSCXfqK2R1o0soRLVBIz92iWTnNPLeQbKa026WqPRRO1GROq7SuvrrEhzcpZQkdoCXglpx1hut99GSEutDcmiqoCxgVoKJq7Z/UMw8cMqtRqPrYHyTKpn60sS9rMNWxrZabX2NageSMcS0DHJVIVz3h2T7wtC+hIqs62eSOqHXFRTLIbEkjsTTK5qxbg7AdPr7EK0S1ZhXE2abAW7Frf0e3fb7AtLL4OsVTm15Pbbiyp9azA9He48VQLRMcf5xaCoesS1M21NgJcMlp+aO2QOr4H+Rk+xPNfwmkDfhCKOFuv9CMx0wTJzrFt86X5PIlPE9lWLtwZ91XmBr7HacqCtYbmAPc/B9OgKpTWwhyeKONZvpu8C7NGBT1ck3e79nRF87Pa1e/Gc4GpgoYEJ8y/CZWWWGmZNrgAAAABJRU5ErkJggg=="
+      alt="gerb"
+      loading="lazy"
+    />
+  </h2>
+  <ul class="foundations__list"></ul>
+  <button
+    type="button"
+    class="support__slider-btn"
+    aria-label="Next page"
+  ></button>
+</aside>
+
+      </div>
+
+      <section class="popular__books">
+        <h2 class="books__list__title"></h2>
+        <ul class="books__list"></ul>
+      </section>
+      <load src="./pagination-list-home.html "></load>
+    </div>
   </div>
-</article>
+</div>
 
     </main>
 
-    <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
-  </div>
-</footer>
+    <div id="book-modal" class="modal is-hidden"></div>
 
+    <div id="menu" class="menu">
+  <div class="fullscreen-menu" id="fullscreen-menu">
+    <div class="fullscreen-menu__container">
+      <div class="menu-user-avatar">
+        <div class="menu__avatar">
+          <img
+            src="data:image/png;base64,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"
+            alt="User avatar"
+            width="37"
+            height="37"
+          />
+        </div>
+
+        <span class="menu__user-name"></span>
+      </div>
+
+      <nav class="fullscreen-menu__nav">
+        <ul class="fullscreen-menu__list">
+          <li class="fullscreen-menu__item">
+            <a class="fullscreen-menu__link" href="/">HOME</a>
+          </li>
+          <li class="fullscreen-menu__item">
+            <a class="fullscreen-menu__link" href="/shopping-list.html"
+              >SHOPPING LIST
+
+              <svg class="nav-btn-icon" width="20" height="20">
+                <use href="/project-BFG93/assets/sprite-xxUWb4nW.svg#uil_cart"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="fullscreen-menu__logout-btn">
+        Log out
+
+        <svg class="logout-btn__icon" width="20" height="20">
+          <use href="/project-BFG93/assets/sprite-xxUWb4nW.svg#arrow-narrow-right"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="background-image">
+      <ul class="background-list-book"></ul>
+    </div>
+  </div>
+</div>
+
+    <div class="auth-backdrop is-hidden">
+  <div class="auth-modal">
+    <button
+      type="button"
+      class="auth-modal__close-btn"
+      aria-label="Close modal"
+    >
+      <svg class="auth-modal__close-icon" width="14" height="14">
+        <use href="/project-BFG93/assets/sprite-xxUWb4nW.svg#cross" class="cross-auth"></use>
+      </svg>
+    </button>
+
+    <form class="auth-form" autocomplete="on">
+      <div class="auth-form__inputs-wrapper">
+        <label class="auth-form__field">
+          <input
+            type="text"
+            name="username"
+            class="auth-form__input txtUsername"
+            placeholder="NAME"
+            required
+          />
+        </label>
+
+        <label class="auth-form__field">
+          <input
+            type="email"
+            name="email"
+            class="auth-form__input txtEmail"
+            placeholder="EMAIL"
+            required
+          />
+          <svg class="auth-form__icon" width="18" height="18">
+            <use href="/project-BFG93/assets/sprite-xxUWb4nW.svg#icon-mail"></use>
+          </svg>
+        </label>
+
+        <label class="auth-form__field">
+          <input
+            type="password"
+            name="password"
+            class="auth-form__input txtPassword"
+            placeholder="PASSWORD"
+            required
+          />
+          <svg class="auth-form__icon" width="16" height="18">
+            <use href="/project-BFG93/assets/sprite-xxUWb4nW.svg#icon-lock"></use>
+          </svg>
+        </label>
+      </div>
+
+      <button type="submit" class="submit-sign-up is-active">Sign up</button>
+    </form>
+
+    <div class="auth-modal__switch-box">
+      <button type="button" class="switch-sign-up is-active">Sign up</button>
+      <button type="button" class="switch-sign-in">Sign in</button>
+    </div>
+    <button type="button" id="googleSignInBtn" class="btn-google">
+      <img
+        src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+        alt="Google"
+      />
+      Sign in with Google
+    </button>
+  </div>
+</div>
 
   </body>
 </html>
