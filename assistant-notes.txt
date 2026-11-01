@@ -1,0 +1,14 @@
+- Найден переключатель темы:
+  - src/partials/header/header.html
+  - src/js/helpers/theme-toogle.js
+- Текущий статус:
+  - Переключатель темы работает через input#theme-toggle
+  - Тема сохраняется в localStorage и устанавливается на document.documentElement
+  - В `src/css/variables.css` уже есть базовые переменные, но нужно подставить точную палитру из Figma
+- Следующий шаг:
+  - получить цвета из Figma
+  - обновить `src/css/variables.css` под новые переменные
+  - применить переменные к компонентам (например, `src/css/components/header.css`, `src/css/components/modal.css` и другие)
+  - проверить переключение тем и внешний вид
+- Вопрос для продолжения:
+  - пришли палитру из Figma в виде списка переменных/HEX/RGB

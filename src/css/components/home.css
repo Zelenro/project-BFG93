@@ -1,0 +1,423 @@
+.js-home {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    .home {
+
+        .home__sidebar {}
+
+        .categories {
+            display: block;
+            width: 100%;
+            max-width: 335px;
+            height: 228px;
+            margin-bottom: 40px;
+            overflow-y: auto;
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 2%, black 98%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 2%, black 98%, transparent 100%);
+            scrollbar-width: thin;
+            scrollbar-color: #e0e0e0 transparent;
+        }
+
+        .categories::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .categories::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .categories::-webkit-scrollbar-thumb {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+        }
+
+        .categories__list {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .categories__item {
+            margin-bottom: 24px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .categories__link {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            outline: none;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 18px;
+            letter-spacing: -0.02em;
+            color: rgba(17, 17, 17, 0.6);
+            transition: color 0.2s ease;
+
+            &:hover,
+            &:focus {
+                color: #4f2ee8;
+            }
+
+            &.is-active {
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #4f2ee8;
+            }
+        }
+
+        .popular__books {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .books__list__title {
+            display: block;
+            margin-top: 40px;
+            height: 38px;
+            margin-top: 0;
+            margin-bottom: 40px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 38px;
+            letter-spacing: -0.04em;
+            color: #111;
+        }
+
+        .title-accent {
+            color: #4F2EE8;
+        }
+
+        .books__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            &>.books__item {
+                margin-bottom: 40px;
+            }
+        }
+
+        .top-books__category {
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .top-books__title {
+            display: block;
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: #B4AFAF;
+        }
+
+        .top-books__list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            width: 100%;
+
+            .books__item {
+                margin-bottom: 0px;
+            }
+        }
+
+        .books__item {
+            width: 100%;
+        }
+
+        .book-card {
+            display: block;
+            max-width: 335px;
+            margin: 0 auto;
+        }
+
+        .card__cover {
+            max-width: 335px;
+            height: 485px;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            position: relative;
+            /* Обязательно для абсолютного позиционирования плашки */
+            overflow: hidden;
+            /* Прячет плашку, пока она находится внизу */
+            cursor: pointer;
+
+            @media (min-width: 768px) {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-8px);
+                    /* Обложка плавно приподнимается */
+                    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+                    /* Добавляет мягкую тень */
+
+                    /* Показываем желтую плашку */
+                    .quick-view-overlay {
+                        transform: translateY(0);
+                    }
+                }
+            }
+        }
+
+        /* Стили для выезжающей желтой плашки */
+        .quick-view-overlay {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 70px;
+            /* Высота желтой плашки */
+            background-color: #EAC645;
+            /* Желтый цвет из макета */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* Изначально смещаем плашку вниз, полностью пряча ее под обложку */
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        /* Стили для текста внутри плашки */
+        .quick-view-text {
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: #111111;
+        }
+
+        .book-card__image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            cursor: pointer;
+        }
+
+        .card__info {
+            margin-top: 14px;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .card__title {
+            margin-top: 0;
+            margin-bottom: 4px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 18px;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: #111;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+
+        .card__author {
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: -0.04em;
+            color: #B4AFAF;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .book__btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 8px;
+            margin-left: auto;
+            width: 124px;
+            height: 46px;
+            border: 2px solid #4F2EE8;
+            border-radius: 40px;
+            background-color: transparent;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease;
+
+            &:hover {
+                background-color: #4F2EE8;
+
+                .button-text {
+                    color: #fff;
+                }
+            }
+        }
+
+        .button-text {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: #111;
+            transition: color 0.2s ease;
+        }
+
+        /* ==========================================================================
+       2. TABLET (768px)
+       ========================================================================== */
+        @media (min-width: 768px) {
+            margin: 0;
+            padding: 0;
+
+            .home__sidebar {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .categories {
+                width: 100%;
+                max-width: 337px;
+                height: 472px;
+            }
+
+            .popular__books {
+                margin-top: 0;
+            }
+
+            .top-books__list {
+                flex-direction: row;
+                width: 100%;
+            }
+
+            .books__list {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .books__item {
+                display: block;
+                width: 216px;
+                margin-left: auto;
+
+                &:nth-of-type(3n + 1) {
+                    margin-left: 0;
+                }
+            }
+
+            .book-card {
+                max-width: 218px;
+                margin: 0;
+            }
+
+            .card__cover {
+                width: 100%;
+                height: 316px;
+            }
+        }
+
+        /* ==========================================================================
+       3. DESKTOP (1440px)
+       ========================================================================== */
+        @media (min-width: 1440px) {
+            .wrapper-home-block {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                max-width: 1440px;
+            }
+
+            .home__sidebar {
+                display: flex;
+                flex-direction: column;
+                width: 356px;
+                flex-shrink: 0;
+            }
+
+            .categories {
+                height: 472px;
+                margin-bottom: 40px;
+            }
+
+            .popular__books {
+                width: 996px;
+                flex-shrink: 0;
+
+                &>.books__list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    gap: 40px 24px;
+
+                    &:has(.top-books__category) {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .top-books__category {
+                display: block;
+                width: 100%;
+                margin-bottom: 40px;
+            }
+
+            .top-books__list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 40px 24px;
+                width: 100%;
+            }
+
+            .books__item {
+                display: block;
+                width: 180px;
+                min-width: 180px;
+                margin: 0 !important;
+                /* Гарантированный сброс маргинов планшета */
+                flex-shrink: 0;
+            }
+
+            .book-card {
+                display: block;
+                max-width: none;
+            }
+
+            .card__cover {
+                width: 100%;
+                height: 256px;
+
+            }
+        }
+    }
+}

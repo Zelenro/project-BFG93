@@ -9,10 +9,20 @@
 @import url('./base.css');
 @import url('./container.css');
 @import url('./animations.css');
+@import url('./variables.css');
 
 /* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+@import url('./components/header.css');
+@import url('./components/home.css');
+@import url('./components/modal.css');
+@import url('./components/charitable-foundations.css');
+@import url('./components/refactor-shopping-list.css');
+@import url('./components/pagination-shopping-list.css');
+@import url('./components/auth-modal.css');
+@import url('./components/menu.css');
+@import url('./components/loader.css');
+
+
+
+/* @import url('./footer/footer.css'); */
+/* @import url('./back-link.css'); */

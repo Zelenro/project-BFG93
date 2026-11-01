@@ -1,0 +1,375 @@
+/* ===== HEADER ===== */
+.header {
+  background-color: var(--color-bg);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 1.5px solid rgba(17, 17, 17, 1);
+  /* height: 64px; */
+  position: relative;
+  z-index: 99999;
+}
+
+/* ===== NAV ===== */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding-top: 18px; */
+  /* padding-bottom: 18px; */
+  height: 64px;
+}
+
+/* ===== LOGO ===== */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  line-height: 1.1;
+  letter-spacing: var(--letter-spacing-lg);
+  color: var(--color-text);
+}
+
+.nav-logo-icon {
+  fill: var(--color-primary);
+}
+
+/* ======= Sign UP ========= */
+
+.header-signup-btn.is-hidden {
+  /* display: none; */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+
+}
+
+
+.header-signup-btn {
+  display: flex;
+  background-color: rgba(79, 46, 232, 1);
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  height: 48px;
+  width: 118px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1.5px;
+  border-radius: 18px;
+  padding: 15px 14px;
+
+
+  font-family: var(--font-main);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+
+}
+
+
+
+/* ===== NAV LIST ===== */
+.nav-list {
+  display: none;
+  /* display: flex; */
+}
+
+.nav-list.is-hidden {
+  display: none;
+}
+
+/* ===== NAV CONTROLS ===== */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ===== BURGER ===== */
+.menu-toggle.is-hidden {
+  display: none;
+}
+
+.menu-toggle {
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text); */
+
+  --toggle-size: 44px;
+  --icon-size: 28px;
+
+  width: var(--toggle-size);
+  height: var(--toggle-size);
+  min-width: var(--toggle-size);
+  min-height: var(--toggle-size);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  padding: calc((var(--toggle-size) - var(--icon-size)) / 2);
+
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+}
+
+
+/* Управление SVG иконками */
+.menu-toggle svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  color: #1e293b;
+}
+
+/* Иконки внутри кнопки */
+.menu-toggle .burger-menu,
+.menu-toggle .cross-menu {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* По умолчанию показываем бургер, скрываем крестик */
+.menu-toggle .cross-menu {
+  display: none;
+}
+
+/* Когда меню открыто - показываем крестик, скрываем бургер */
+.menu-toggle.is-open .burger-menu {
+  display: none;
+}
+
+.menu-toggle.is-open .cross-menu {
+  display: block;
+}
+
+.theme-switch__input {
+  margin: 0;
+}
+
+.menu-toggle svg,
+.menu-toggle use {
+  pointer-events: none;
+  /* Иконка больше не перехватывает клик */
+}
+
+/* ===== MENU ===== */
+
+
+
+@keyframes fadeInUp {
+  /* from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  } */
+}
+
+
+
+/* ===== THEME SWITCH ===== */
+.theme-switch__input {
+  display: none;
+}
+
+.theme-switch__track {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 24px;
+  background: linear-gradient(180deg, var(--color-primary) 0%, #DCDCDC 100%);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.theme-switch__marker {
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(180deg, var(--color-white) 0%, #F7F7F7 100%);
+  border-radius: 50%;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
+  transition: transform var(--transition);
+}
+
+.theme-switch__input:checked+.theme-switch__track .theme-switch__marker {
+  transform: translateX(20px);
+}
+
+/* ===== USER MENU ===== */
+.user-menu {
+  display: none;
+  position: relative;
+}
+
+.user-menu.is-hidden {
+  display: none;
+  position: relative;
+}
+
+.user-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background-color: var(--color-primary);
+  border-radius: 36px;
+  color: var(--color-white);
+  cursor: pointer;
+  border: none;
+  transition: background-color var(--transition);
+}
+
+.user-bar:hover {
+  background-color: color-mix(in srgb, var(--color-primary) 80%, black);
+}
+
+.user-bar__avatar {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #ddd;
+}
+
+.user-bar__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-bar__name {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  line-height: 1.2;
+}
+
+.user-bar__arrow {
+  fill: currentColor;
+}
+
+/* ===== USER DROPDOWN ===== */
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  display: none;
+  padding: 0;
+  background-color: var(--color-bg);
+  border: 1.5px solid var(--color-text);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.user-dropdown.is-open {
+  display: block;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 12px 18px;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  font-family: var(--font-main);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.logout-btn:hover {
+  background-color: color-mix(in srgb, var(--color-black) 5%, transparent);
+}
+
+.logout-btn__icon {
+  stroke: var(--color-primary);
+}
+
+/* ===== TABLET — от 768px ===== */
+@media (min-width: 768px) {
+  .nav {
+    height: 72px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 40px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    transition: background-color var(--transition);
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    background-color: var(--color-accent);
+  }
+
+  .nav-link.is-active {
+    background-color: var(--color-accent);
+  }
+
+  .user-menu {
+    display: block;
+  }
+}
+
+/* ===== DESKTOP — от 1440px ===== */
+@media (min-width: 1440px) {
+  .nav {
+    /* display: block; */
+  }
+}

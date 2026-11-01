@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./img/logo.png"
+      width="28"
+      height="28"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping list</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div id="page-loader" class="page-loader">
+      <div class="spinner"></div>
+    </div>
+    <load src="./partials/header/header.html" icon-path="./img/sprite.svg" />
+
+    <main class="js-shoppig-list">
+      <load
+        src="./partials/main/shopping-list/shopping.html"
+        icon-path="./img/sprite.svg"
+      />
+    </main>
+
+    <script type="module" src="./main.js"></script>
+    <load src="./partials/main/modal.html" icon-path="./img/sprite.svg" />
+    <load src="./partials/main/menu.html" icon-path="./img/sprite.svg" />
+  </body>
+</html>

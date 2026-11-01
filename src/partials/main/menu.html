@@ -1,0 +1,46 @@
+<div id="menu" class="menu">
+  <div class="fullscreen-menu" id="fullscreen-menu">
+    <div class="fullscreen-menu__container">
+      <div class="menu-user-avatar">
+        <div class="menu__avatar">
+          <img
+            src="/img/user-avatar/stephen.png"
+            alt="User avatar"
+            width="37"
+            height="37"
+          />
+        </div>
+
+        <span class="menu__user-name"></span>
+      </div>
+
+      <nav class="fullscreen-menu__nav">
+        <ul class="fullscreen-menu__list">
+          <li class="fullscreen-menu__item">
+            <a class="fullscreen-menu__link" href="/">HOME</a>
+          </li>
+          <li class="fullscreen-menu__item">
+            <a class="fullscreen-menu__link" href="/shopping-list.html"
+              >SHOPPING LIST
+
+              <svg class="nav-btn-icon" width="20" height="20">
+                <use href="{=$icon-path}#uil_cart"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="fullscreen-menu__logout-btn">
+        Log out
+
+        <svg class="logout-btn__icon" width="20" height="20">
+          <use href="{=$icon-path}#arrow-narrow-right"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="background-image">
+      <ul class="background-list-book"></ul>
+    </div>
+  </div>
+</div>

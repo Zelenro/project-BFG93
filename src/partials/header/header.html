@@ -1,0 +1,82 @@
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a class="nav-logo" href="/" aria-label="Site logo">
+        <svg class="nav-logo-icon" width="24" height="24">
+          <use href="{=$icon-path}#favicon"></use>
+        </svg>
+        <span class="nav-logo-text">Bookshelf</span>
+      </a>
+
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/shopping-list.html"
+            >Shopping lists
+            <svg class="nav-btn-icon" width="20" height="20">
+              <use href="{=$icon-path}#uil_cart"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-controls">
+        <div class="theme-switch">
+          <input
+            type="checkbox"
+            class="theme-switch__input"
+            id="theme-toggle"
+          />
+          <label for="theme-toggle" class="theme-switch__track">
+            <span class="theme-switch__marker"></span>
+          </label>
+        </div>
+
+        <div class="user-menu">
+          <button
+            class="user-bar"
+            aria-expanded="false"
+            aria-controls="user-dropdown"
+          >
+            <div class="user-bar__avatar">
+              <img
+                src="/img/user-avatar/stephen.png"
+                alt="User avatar"
+                width="37"
+                height="37"
+              />
+            </div>
+            <span class="user-bar__name"></span>
+
+            <svg class="user-bar__arrow" width="23" height="26">
+              <use href="{=$icon-path}#Vector"></use>
+            </svg>
+          </button>
+
+          <div class="user-dropdown" id="user-dropdown">
+            <button class="logout-btn">
+              Log out
+              <svg class="logout-btn__icon" width="20" height="20">
+                <use href="{=$icon-path}#arrow-narrow-right"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button class="header-signup-btn is-hidden">
+          Sign up
+          <svg class="signUp-btn__icon" width="20" height="20">
+            <use href="{=$icon-path}#arrow-narrow-right"></use>
+          </svg>
+        </button>
+        <button class="menu-toggle" aria-label="Open menu">
+          <svg width="14" height="14">
+            <use href="{=$icon-path}#align-left" class="burger-menu"></use>
+            <use href="{=$icon-path}#cross" class="cross-menu"></use>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
