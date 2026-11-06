@@ -5,10 +5,15 @@
     --color-primary: #4F2EE8;
     --color-accent: #EAC645;
     --color-white: #ffffff;
+    --color-bg-body: #f6f6f6;
 
     /* ===== LIGHT THEME (default) ===== */
-    --color-bg: var(--color-white);
-    --color-text: var(--color-black);
+    --color-bg: #ffffff;
+    --color-text: #111111;
+    --color-surface: rgba(255, 255, 255, 0.6);
+    --color-surface-strong: #ffffff;
+    --color-border: rgba(17, 17, 17, 0.15);
+    --color-muted: rgba(17, 17, 17, 0.6);
 
     /* ===== FONT FAMILY ===== */
     --font-main: 'DM Sans', sans-serif;
@@ -55,8 +60,18 @@
     /* Desktop: 1440px */
 }
 
-/* ===== DARK THEME ===== */
-body.dark {
-    --color-bg: var(--color-dark);
-    --color-text: var(--color-white);
+:root[data-theme='dark'] {
+    --color-bg: #111111;
+    --color-text: #ffffff;
+    --color-surface: rgba(17, 17, 17, 0.6);
+    --color-surface-strong: #202024;
+    --color-border: rgba(255, 255, 255, 0.15);
+    --color-muted: rgba(255, 255, 255, 0.6);
+    --color-bg-body: #202024;
+}
+
+body {
+    background-color: var(--color-bg-body);
+    color: var(--color-text);
+    transition: background-color var(--transition), color var(--transition);
 }

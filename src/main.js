@@ -1,4 +1,5 @@
 import './js/components/auth/auth-modal';
+import './js/helpers/theme-toogle';
 
 import { headerJS } from './js/components/header/header';
 import { activationCurrentLink } from './js/helpers/activation-current-link';
