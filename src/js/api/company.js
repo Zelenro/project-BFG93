@@ -1,50 +1,60 @@
+import saveChildrenImg from '../../images/save-children.png';
+import projectHopeImg from '../../images/project-hope.png';
+import medCorpsImg from '../../images/med-corps.png';
+import razomImg from '../../images/razom.png';
+import actionHungerImg from '../../images/action-hunger.png';
+import prytulaImg from '../../images/prytula.png';
+import united24Img from '../../images/united24.png';
+import worldVisionImg from '../../images/world-vision.png';
+import msfImg from '../../images/msf.png';
+
 export const company = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: './images/save-children.png',
+    img: saveChildrenImg,
   },
   {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
-    img: './images/project-hope.png',
+    img: projectHopeImg,
   },
 
   {
     title: 'International Medical Corps',
     url: 'https://internationalmedicalcorps.org/country/ukraine/',
-    img: './images/med-corps.png',
+    img: medCorpsImg,
   },
 
   {
     title: 'RAZOM',
     url: 'https://www.razomforukraine.org/',
-    img: './images/razom.png',
+    img: razomImg,
   },
   {
     title: 'Action against hunger',
     url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-    img: './images/action-hunger.png',
+    img: actionHungerImg,
   },
 
   {
     title: 'Serhiy Prytula Charity Foundation',
     url: 'https://prytulafoundation.org/en',
-    img: './images/prytula.png',
+    img: prytulaImg,
   },
   {
     title: 'UNITED24',
     url: 'https://u24.gov.ua/uk',
-    img: './images/united24.png',
+    img: united24Img,
   },
   {
     title: 'World vision',
     url: 'https://www.wvi.org/emergencies/ukraine',
-    img: './images/world-vision.png',
+    img: worldVisionImg,
   },
   {
     title: 'Medicins Sans Frontieres',
     url: 'https://www.msf.org/ukraine',
-    img: './images/msf.png',
+    img: msfImg,
   },
 ];
