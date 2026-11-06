@@ -64,16 +64,14 @@ export async function signInWithGooglePopup() {
 }
 
 export async function linkWithGoogle() {
-  const auth = getAuth();
-  const provider = new GoogleAuthProvider();
-  const user = auth.currentUser;
+  const currentUser = auth.currentUser;
 
-  if (!user) {
+  if (!currentUser) {
     throw new Error('No user logged in');
   }
 
   try {
-    const result = await linkWithPopup(user, provider);
+    const result = await linkWithPopup(currentUser, new GoogleAuthProvider());
     console.log('Account linked with Google:', result.user);
     return result.user;
   } catch (error) {

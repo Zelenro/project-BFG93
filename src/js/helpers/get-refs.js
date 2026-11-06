@@ -20,6 +20,12 @@ export function getRefs() {
     userDropdown: document.querySelector('.user-dropdown'),
     userName: document.querySelector('.user-bar__name'),
     navLinks: document.querySelectorAll('.nav-link, .nav-btn-link'),
+    navHomeLink: document.querySelector(
+      '.nav-link[href="/"], .nav-link[href="./"], .nav-link[href="/index.html"], .nav-link[href="/project-BFG93/"], .nav-link[href="/project-BFG93/index.html"]'
+    ),
+    navShoppingLink: document.querySelector(
+      '.nav-link[href="/shopping-list.html"], .nav-link[href="./shopping-list.html"], .nav-link[href="/project-BFG93/shopping-list.html"]'
+    ),
     navList: document.querySelector('.nav-list'),
     menuUserName: document.querySelector('.menu__user-name'),
     menuToggle: document.querySelector('.menu-toggle'),

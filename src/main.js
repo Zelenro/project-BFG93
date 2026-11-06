@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (refs.navHomeLink) refs.navHomeLink.classList.add('is-hidden');
         if (refs.navShoppingLink)
           refs.navShoppingLink.classList.add('is-hidden');
-        if (refs.menu.classList.contains('is-open')) {
+        if (refs.menu?.classList.contains('is-open')) {
           refs.menu.classList.remove('is-open');
         }
 

@@ -47,7 +47,9 @@ function onEscKeyPress(e) {
 }
 
 function openModal() {
-  refs.authBackdrop.classList.remove('is-hidden');
+  if (refs.authBackdrop) {
+    refs.authBackdrop.classList.remove('is-hidden');
+  }
   window.addEventListener('keydown', onEscKeyPress);
 }
 
@@ -102,13 +104,29 @@ async function handleGoogleSignIn() {
       if (!user.displayName) {
         const name = prompt('Введите ваше имя для профиля:');
         if (name) {
-          await updateProfile(user, { displayName: name });
+          await updateProfile(user, { displayName: name.trim() });
         }
       }
       closeModal();
     }
   } catch (error) {
     console.error('Ошибка Google входа:', error);
+
+    if (error?.code === 'auth/popup-closed-by-user') {
+      alert('Вход через Google был отменён.');
+      return;
+    }
+
+    if (error?.code === 'auth/popup-blocked') {
+      alert('Окно входа через Google заблокировано браузером. Разрешите всплывающие окна и попробуйте снова.');
+      return;
+    }
+
+    if (error?.code === 'auth/network-request-failed') {
+      alert('Проблема с сетью. Проверьте подключение и попробуйте снова.');
+      return;
+    }
+
     alert('Не удалось войти через Google. Попробуйте снова.');
   }
 }
