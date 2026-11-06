@@ -12,10 +12,15 @@ export async function markupCharitableFundations() {
     const markup = company
       .map(({ title, url, img }, index) => {
         const padIndex = String(index + 1).padStart(2, '0');
+        const isSpecialLogo = title === 'UNITED24' || title === 'World vision';
+        const logoClass = isSpecialLogo
+          ? 'foundations__logo foundations__logo--special'
+          : 'foundations__logo';
+
         return `<li class="foundations__item">
           <span class="foundations__number">${padIndex}</span>
           <a class="foundations__link" href="${url}" target="_blank" rel="noopener noreferrer">
-            <img class="foundations__logo" src="${img}" alt="${title}" loading="lazy">
+            <img class="${logoClass}" src="${img}" alt="${title}" loading="lazy">
           </a>
         </li>`;
       })

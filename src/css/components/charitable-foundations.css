@@ -75,8 +75,19 @@
 .foundations__logo {
     height: 32px;
     width: auto;
+    max-width: 90px;
     filter: brightness(0) invert(1);
     object-fit: contain;
+    display: block;
+}
+
+.foundations__logo--special {
+    height: 32px;
+    width: 100%;
+    max-width: 90px;
+    filter: none;
+    object-fit: contain;
+    display: block;
 }
 
 .support__slider-btn {
