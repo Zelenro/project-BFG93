@@ -6,7 +6,7 @@ export function markupPaginationBlock(
   const isFirstPage = currentPage === 1;
   const isLastPage = currentPage === totalPages;
 
-  const markup = /*html*/ `   
+  const markup =  `   
    
    <button class="pagination__btn js-pag-first" data-page="first" type="button" ${isFirstPage ? 'disabled' : ''}>
   &laquo;

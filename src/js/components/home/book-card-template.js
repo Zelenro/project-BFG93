@@ -1,5 +1,5 @@
 export const bookCardTemplate = (book_image, title, author, _id) => {
-  return /*html*/ `<li class="books__item">
+  return  `<li class="books__item">
               <article class="book-card">
                 <div class="card__cover">
                   <img src="${book_image}" alt="${title}" class="book-card__image js-book-image" data-id="${_id}" />

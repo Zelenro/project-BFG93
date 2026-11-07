@@ -18,7 +18,7 @@ export async function backgroundListBookRender() {
       .map(({ books }) => {
         const firstBook = books[0];
         if (!firstBook) return '';
-        return /*html*/ `<li class="menu-background-item"><img src="${firstBook.book_image}" alt="${firstBook.title}" class="menu-img-background" loading="lazy"/></li>`;
+        return  `<li class="menu-background-item"><img src="${firstBook.book_image}" alt="${firstBook.title}" class="menu-img-background" loading="lazy"/></li>`;
       })
       .join('');
 

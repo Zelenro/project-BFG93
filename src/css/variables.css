@@ -1,5 +1,5 @@
 :root {
-    /* ===== COLORS ===== */
+
     --color-black: #111111;
     --color-dark: #202024;
     --color-primary: #4F2EE8;
@@ -7,39 +7,53 @@
     --color-white: #ffffff;
     --color-bg-body: #f6f6f6;
 
-    /* ===== LIGHT THEME (default) ===== */
+
     --color-bg: #ffffff;
     --color-text: #111111;
+    --color-text-soft: rgba(17, 17, 17, 0.6);
+    --color-text-muted: #b4afaf;
     --color-surface: rgba(255, 255, 255, 0.6);
     --color-surface-strong: #ffffff;
     --color-border: rgba(17, 17, 17, 0.15);
     --color-muted: rgba(17, 17, 17, 0.6);
+    --header-bg: #f6f6f6;
+    --sidebar-bg: #f6f6f6;
 
-    /* ===== FONT FAMILY ===== */
+    --icon-card-bg: #111111;
+    --icon-card-border: rgba(79, 46, 232, 0.6);
+    --icon-card-text: #ffffff;
+    --icon-card-muted: rgba(180, 175, 175, 1);
+    --icon-delete-bg: #4F2EE8;
+    --icon-delete-color: #ffffff;
+    --icon-store-primary: #ffffff;
+    --icon-store-secondary: rgba(255, 255, 255, 0.8);
+    --icon-store-outline: rgba(79, 46, 232, 0.8);
+
+
     --font-main: 'DM Sans', sans-serif;
 
-    /* ===== FONT SIZES ===== */
+
     --font-size-xs: 12px;
     --font-size-sm: 14px;
     --font-size-md: 16px;
     --font-size-lg: 18px;
 
-    /* ===== LINE HEIGHTS ===== */
+
     --line-height-xs: 14px;
     --line-height-sm: 18px;
     --line-height-md: 24px;
 
-    /* ===== FONT WEIGHTS ===== */
+
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
 
-    /* ===== LETTER SPACING ===== */
+
     --letter-spacing-sm: -0.01em;
     --letter-spacing-md: -0.02em;
     --letter-spacing-lg: -0.04em;
 
-    /* ===== BUTTONS ===== */
+
     --btn-bg-default: transparent;
     --btn-bg-hover: var(--color-primary);
     --btn-border: 2px solid var(--color-primary);
@@ -51,23 +65,56 @@
     --btn-font-weight: var(--font-weight-bold);
     --btn-letter-spacing: var(--letter-spacing-lg);
 
-    /* ===== TRANSITIONS ===== */
-    --transition: 300ms ease-in-out;
 
-    /* ===== BREAKPOINTS (для справки в комментариях) ===== */
-    /* Mobile:  375px  */
-    /* Tablet:  768px  */
-    /* Desktop: 1440px */
+    --transition: 300ms ease-in-out;
 }
 
 :root[data-theme='dark'] {
-    --color-bg: #111111;
+    --color-bg-body: #202024;
+    --color-bg: #202024;
     --color-text: #ffffff;
+    --color-text-soft: rgba(255, 255, 255, 0.6);
+    --color-text-muted: #b4afaf;
     --color-surface: rgba(17, 17, 17, 0.6);
-    --color-surface-strong: #202024;
+    --color-surface-strong: #1f1f22;
     --color-border: rgba(255, 255, 255, 0.15);
     --color-muted: rgba(255, 255, 255, 0.6);
-    --color-bg-body: #202024;
+    --header-bg: #111111;
+    --sidebar-bg: #1d1d1f;
+
+    --icon-card-bg: #111111;
+    --icon-card-border: rgba(79, 46, 232, 0.6);
+    --icon-card-text: #ffffff;
+    --icon-card-muted: rgba(180, 175, 175, 1);
+    --icon-delete-bg: #4F2EE8;
+    --icon-delete-color: #ffffff;
+    --icon-store-primary: #ffffff;
+    --icon-store-secondary: rgba(255, 255, 255, 0.8);
+    --icon-store-outline: rgba(79, 46, 232, 0.8);
+}
+
+:root[data-theme='light'] {
+    --color-bg-body: #f6f6f6;
+    --color-bg: #ffffff;
+    --color-text: #111111;
+    --color-text-soft: rgba(17, 17, 17, 0.6);
+    --color-text-muted: #b4afaf;
+    --color-surface: rgba(255, 255, 255, 0.6);
+    --color-surface-strong: #ffffff;
+    --color-border: rgba(17, 17, 17, 0.15);
+    --color-muted: rgba(17, 17, 17, 0.6);
+    --header-bg: #f6f6f6;
+    --sidebar-bg: #f6f6f6;
+
+    --icon-card-bg: #ffffff;
+    --icon-card-border: rgba(79, 46, 232, 0.4);
+    --icon-card-text: #111111;
+    --icon-card-muted: rgba(180, 175, 175, 1);
+    --icon-delete-bg: #4F2EE8;
+    --icon-delete-color: #ffffff;
+    --icon-store-primary: #111111;
+    --icon-store-secondary: rgba(17, 17, 17, 0.7);
+    --icon-store-outline: rgba(79, 46, 232, 0.8);
 }
 
 body {

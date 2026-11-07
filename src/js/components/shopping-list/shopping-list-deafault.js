@@ -1,5 +1,5 @@
 export function shoppingListDefault() {
-  return /*html*/ `
+  return  `
 <li class="shopping-list-default">
   <p class="list-default-info">
     This page is empty, add some books and proceed to order.

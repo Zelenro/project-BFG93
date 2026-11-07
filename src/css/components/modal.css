@@ -242,13 +242,40 @@ body.dark-theme .modal__shop-link:focus .shop-link-img.amazon {
     filter: brightness(0) invert(1) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 
+:root[data-theme='light'] .modal__shop-link .shop-link-img {
+    filter: grayscale(100%);
+}
+
+:root[data-theme='light'] .modal__shop-link:hover .shop-link-img,
+:root[data-theme='light'] .modal__shop-link:focus .shop-link-img {
+    filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+}
+
+:root[data-theme='dark'] .modal__shop-link .shop-link-img.apple-books {
+    filter: grayscale(100%);
+}
+
+:root[data-theme='dark'] .modal__shop-link .shop-link-img.amazon {
+    filter: brightness(0) invert(1);
+}
+
+:root[data-theme='dark'] .modal__shop-link:hover .shop-link-img.apple-books,
+:root[data-theme='dark'] .modal__shop-link:focus .shop-link-img.apple-books {
+    filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+}
+
+:root[data-theme='dark'] .modal__shop-link:hover .shop-link-img.amazon,
+:root[data-theme='dark'] .modal__shop-link:focus .shop-link-img.amazon {
+    filter: brightness(0) invert(1) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+}
+
 .modal__action-btn:disabled,
 .modal__action-btn.is-disabled {
     background-color: #b4b4b4;
-    /* Серый цвет */
+
     color: #ffffff;
     cursor: not-allowed;
-    /* Курсор запрета */
+
     border-color: #b4b4b4;
 }
 

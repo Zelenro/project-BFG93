@@ -62,7 +62,7 @@
 .fullscreen-menu__link {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    
 
     font-family: 'DM Sans', sans-serif;
     font-weight: 500;
@@ -151,7 +151,7 @@
     object-fit: cover;
     border-radius: 8px;
 
-    /* Опционально: мягкое появление картинки после загрузки */
+    
     animation: fadeIn 0.3s ease-in-out;
 }
 

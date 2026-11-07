@@ -13,7 +13,7 @@ export function markupCardBooks(book) {
         .replace(/[\s-]+/g, '-')
         .trim();
 
-      return /*html*/ `
+      return  `
         <a href="${url}" target="_blank" rel="noopener noreferrer" class="modal__shop-link ${shopClass}">
           <img src="./img/${shopClass}.png" alt="${name}" class="shop-link-img ${shopClass}">
           <span class="visually-hidden">${name}</span>
@@ -22,7 +22,7 @@ export function markupCardBooks(book) {
     })
     .join('');
 
-  return /*html*/ `
+  return  `
   <li class="book-card" data-id="${_id}">
     <img src="${book_image}" alt="${title} book cover" class="book-cover" />
 

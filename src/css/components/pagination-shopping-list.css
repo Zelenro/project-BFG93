@@ -2,14 +2,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
 .pagination__pages {
     display: flex;
-    gap: 8px;
+    gap: 12px;
+    align-items: center;
 }
 
 .pagination__btn,
@@ -19,33 +20,39 @@
     justify-content: center;
     width: 58px;
     height: 58px;
-    border: 1px solid rgba(17, 17, 17, 0.2);
     border-radius: 50%;
-    background-color: transparent;
     font-family: 'DM Sans', sans-serif;
     font-weight: 700;
     font-size: 34px;
-    color: #111111;
     cursor: pointer;
     transition: all 250ms ease;
 }
 
-/* Активная страница (черный круг, белый текст) */
-.pagination__page-num.is-active {
-    background-color: #111111;
+.pagination__btn {
+    background-color: #2b2b2d;
+    border: 2px solid rgba(255, 255, 255, 0.7);
     color: #ffffff;
-    border-color: #111111;
 }
 
-/* Стрелочки перехода Вперед/Назад (желтые/оранжевые по макету) */
+.pagination__page-num {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.pagination__page-num.is-active {
+    background-color: #ffffff;
+    color: #111111;
+    border-color: #ffffff;
+}
+
 .js-pag-next,
 .js-pag-last {
-    background-color: #F3B249;
-    /* Подберите точный цвет по вашему макету */
-    border-color: #F3B249;
+    background-color: #f3bf49;
+    border-color: #f3bf49;
+    color: #111111;
 }
 
-/* Состояние Disabled, если мы на первой или последней странице */
 .pagination__btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;

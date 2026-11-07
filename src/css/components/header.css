@@ -1,25 +1,24 @@
-/* ===== HEADER ===== */
 .header {
   background-color: var(--color-bg);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   border: 1.5px solid rgba(17, 17, 17, 1);
-  /* height: 64px; */
+
   position: relative;
   z-index: 99999;
 }
 
-/* ===== NAV ===== */
+
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* padding-top: 18px; */
-  /* padding-bottom: 18px; */
+
+
   height: 64px;
 }
 
-/* ===== LOGO ===== */
+
 .nav-logo {
   display: flex;
   align-items: center;
@@ -35,10 +34,10 @@
   fill: var(--color-primary);
 }
 
-/* ======= Sign UP ========= */
+
 
 .header-signup-btn.is-hidden {
-  /* display: none; */
+
   position: absolute;
   width: 1px;
   height: 1px;
@@ -76,42 +75,30 @@
 
 
 
-/* ===== NAV LIST ===== */
+
 .nav-list {
   display: none;
-  /* display: flex; */
+
 }
 
 .nav-list.is-hidden {
   display: none;
 }
 
-/* ===== NAV CONTROLS ===== */
+
 .nav-controls {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-/* ===== BURGER ===== */
+
 .menu-toggle.is-hidden {
   display: none;
 }
 
 .menu-toggle {
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  width: 28px;
-  height: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--color-text); */
+
 
   --toggle-size: 44px;
   --icon-size: 28px;
@@ -139,7 +126,7 @@
 }
 
 
-/* Управление SVG иконками */
+
 .menu-toggle svg {
   width: var(--icon-size);
   height: var(--icon-size);
@@ -147,18 +134,18 @@
   color: #1e293b;
 }
 
-/* Иконки внутри кнопки */
+
 .menu-toggle .burger-menu,
 .menu-toggle .cross-menu {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* По умолчанию показываем бургер, скрываем крестик */
+
 .menu-toggle .cross-menu {
   display: none;
 }
 
-/* Когда меню открыто - показываем крестик, скрываем бургер */
+
 .menu-toggle.is-open .burger-menu {
   display: none;
 }
@@ -174,28 +161,18 @@
 .menu-toggle svg,
 .menu-toggle use {
   pointer-events: none;
-  /* Иконка больше не перехватывает клик */
-}
 
-/* ===== MENU ===== */
-
-
-
-@keyframes fadeInUp {
-  /* from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  } */
 }
 
 
 
-/* ===== THEME SWITCH ===== */
+
+
+@keyframes fadeInUp {}
+
+
+
+
 .theme-switch__input {
   display: none;
 }
@@ -228,7 +205,7 @@
   transform: translateX(20px);
 }
 
-/* ===== USER MENU ===== */
+
 .user-menu {
   display: none;
   position: relative;
@@ -280,7 +257,7 @@
   fill: currentColor;
 }
 
-/* ===== USER DROPDOWN ===== */
+
 .user-dropdown {
   position: absolute;
   top: calc(100% + 8px);
@@ -325,7 +302,7 @@
   stroke: var(--color-primary);
 }
 
-/* ===== TABLET — от 768px ===== */
+
 @media (min-width: 768px) {
   .nav {
     height: 72px;
@@ -367,9 +344,7 @@
   }
 }
 
-/* ===== DESKTOP — от 1440px ===== */
+
 @media (min-width: 1440px) {
-  .nav {
-    /* display: block; */
-  }
+  .nav {}
 }
